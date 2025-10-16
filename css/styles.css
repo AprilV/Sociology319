@@ -1,0 +1,529 @@
+/* ============================================
+   SOC319 Research Website Styles
+   Professional Academic Design
+   ============================================ */
+
+/* CSS Variables for Consistent Theming */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --bg-light: #ecf0f1;
+    --bg-white: #ffffff;
+    --border-color: #bdc3c7;
+    --shadow: 0 2px 8px rgba(0,0,0,0.1);
+    --shadow-hover: 0 4px 16px rgba(0,0,0,0.15);
+    --max-width: 1200px;
+    --spacing-small: 1rem;
+    --spacing-medium: 2rem;
+    --spacing-large: 4rem;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.8;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; margin-top: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+strong {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.nav-brand h1 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.course-info {
+    color: #bdc3c7;
+    font-size: 0.9rem;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.nav-menu li a {
+    color: white;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    background-color: var(--secondary-color);
+    text-decoration: none;
+}
+
+/* Main Container */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow);
+}
+
+.hero-title {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #ecf0f1;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.hero-byline {
+    font-size: 1.2rem;
+    color: #bdc3c7;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.hero-author {
+    font-size: 1rem;
+    color: #95a5a6;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+/* Section Styles */
+section {
+    background-color: var(--bg-white);
+    padding: 3rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.section-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Blockquote */
+.feature-quote {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--text-dark);
+    border-left: 4px solid var(--secondary-color);
+    padding-left: 2rem;
+    margin: 2rem 0;
+    background-color: var(--bg-light);
+    padding: 1.5rem 2rem;
+    border-radius: 4px;
+}
+
+/* Intro Text */
+.intro-text {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--text-dark);
+}
+
+/* Research Question Box */
+.research-question {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.rq-box {
+    background-color: rgba(255,255,255,0.95);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-hover);
+}
+
+.rq-text {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* Overview Grid */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.overview-card {
+    background-color: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.overview-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.overview-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.overview-card p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-link {
+    display: inline-block;
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.card-link:hover {
+    color: var(--accent-color);
+}
+
+/* Key Findings */
+.findings-list {
+    margin-top: 2rem;
+}
+
+.finding-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.finding-item:hover {
+    transform: translateX(8px);
+}
+
+.finding-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.finding-content h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.finding-content p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* Theory Grid */
+.theory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.theory-card {
+    background-color: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-top: 3px solid var(--secondary-color);
+}
+
+.theory-card h4 {
+    color: var(--secondary-color);
+    margin-bottom: 0.75rem;
+}
+
+.theory-card p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* Methodology Preview */
+.method-intro {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+}
+
+.method-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.stat-item {
+    padding: 1.5rem;
+    background-color: var(--bg-light);
+    border-radius: 8px;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+/* Navigation Footer */
+.navigation-footer {
+    background-color: var(--bg-light);
+}
+
+.nav-footer-text {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.footer-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.footer-nav-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.footer-nav-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.footer-nav-card h4 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.footer-nav-card p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+/* Site Footer */
+.site-footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.footer-info p {
+    margin-bottom: 0.5rem;
+    color: #bdc3c7;
+}
+
+.footer-links {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--secondary-color);
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .overview-grid,
+    .theory-grid,
+    .footer-nav-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .method-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .finding-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    section {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .method-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+/* Print Styles for Academic Citation */
+@media print {
+    .navbar,
+    .navigation-footer,
+    .site-footer {
+        display: none;
+    }
+    
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    section {
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+    
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+}
