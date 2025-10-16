@@ -1,0 +1,38 @@
+# SOC319 Website - Git Ignore File
+
+# Node modules (if using build tools later)
+node_modules/
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build output
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Logs
+*.log
+logs/
+
+# Environment variables (if any)
+.env
+.env.local
+
+# Draft files
+drafts/
+scratch/
