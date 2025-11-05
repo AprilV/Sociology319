@@ -1,406 +1,202 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Collaboration | SOC319 Research</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Our Collaboration - Digital Divide in AI Literacy | SOC319</title>
+    <link rel='stylesheet' href='css/styles.css'>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <h1>SOC319 Research Project</h1>
-                <p class="course-info">Sociology of Digital Media • Fall 2025</p>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="problem.html">Context</a></li>
-                <li><a href="case-study.html" class="active">Our Collaboration</a></li>
-                <li><a href="strategies.html">Broader Implications</a></li>
-                <li><a href="role.html">Reflexivity</a></li>
-                <li><a href="methodology.html">Methodology</a></li>
+    <header style='background: linear-gradient(135deg, #1e3a5f 0%, #1a7f8e 100%); color: white; padding: 1.5rem 2rem; text-align: center;'>
+        <h1 style='font-size: 2.2rem; margin-bottom: 0.5rem; font-weight: 600; color: #ffffff; text-shadow: 0 1px 3px rgba(0,0,0,0.2);'>April V. Sykes</h1>
+        <p style='font-size: 1.1rem; margin: 0.25rem 0;'>SOC319 - Social Issues & Technology</p>
+        <p style='font-size: 1rem; margin: 0.25rem 0;'>Dr. Cohen | Olympic College | Fall 2025</p>
+    </header>
+
+    <nav class='navbar'>
+        <div class='nav-container'>
+            <div class='nav-brand'>Digital Divide in AI Literacy</div>
+            <ul class='nav-menu'>
+                <li><a href='index.html'>Home</a></li>
+                <li><a href='problem.html'>Context</a></li>
+                <li><a href='case-study.html' class='active'>Our Collaboration</a></li>
+                <li><a href='strategies.html'>Broader Implications</a></li>
+                <li><a href='role.html'>Reflexivity</a></li>
+                <li><a href='methodology.html'>Methodology</a></li>
+                <li><a href='references.html'>References</a></li>
             </ul>
         </div>
     </nav>
 
-    <main class="container">
-        <header class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">Our Collaboration (Draft)</h1>
-                <h2 class="hero-subtitle">4+ Weeks of Human-AI Development</h2>
-            </div>
-        </header>
+    <main class='container' style='padding: 3rem 2rem; max-width: 1000px; margin: 0 auto;'>
+        <h1 style='color: #1e3a5f; margin-bottom: 1rem; font-size: 2.5rem;'>Our Collaboration: The Divide in Action</h1>
+        <p style='color: #666; font-size: 1.1rem; font-style: italic; margin-bottom: 3rem;'>
+            6 Weeks of AI Partnership Building the H.C. Lombardo App
+        </p>
 
-        <section>
-            <div class="section-content">
-                <div style="background-color: #e8f4f8; padding: 2rem; border-left: 4px solid #0077b6; border-radius: 4px; margin-bottom: 2rem;">
-                    <h3 style="color: #023e8a;">Important Note on This Page</h3>
-                    <p style="margin: 0; line-height: 1.8;">
-                        This is the core of my research - documenting how my relationship with the AI developed 
-                        over 4-5 weeks of working on the H.C. Lombardo App. I've been tracking our interactions 
-                        in <strong>SOCIOLOGY.md</strong> (553+ lines) and through 50+ GitHub commits. This page 
-                        will be filled in by analyzing that data and doing regular discussions with the AI to 
-                        understand both perspectives.
-                    </p>
-                </div>
-
-                <div style="background-color: #d1fae5; padding: 2rem; border-left: 4px solid #10b981; border-radius: 4px; margin-bottom: 2rem;">
-                    <h3 style="color: #065f46;">🎯 Key Discovery: The Milestones Page</h3>
-                    <p style="margin-bottom: 1rem; line-height: 1.8;">
-                        On October 15, 2025, I created a "Milestones" tab in the H.C. Lombardo App to document our 
-                        Agile development process. In my original concept, I said:
-                    </p>
-                    <blockquote style="border-left: 3px solid #10b981; padding-left: 1rem; margin: 1rem 0; font-style: italic;">
-                        "It could also show a little of how our relationship professionally has changed. 
-                        <strong>It's kinda a sociological thing.</strong>"
-                    </blockquote>
-                    <p style="margin-top: 1rem; line-height: 1.8;">
-                        <strong>I already knew this was sociologically significant BEFORE reading Turkle!</strong> 
-                        The Milestones documentation includes 3-phase collaboration evolution, communication shifts 
-                        (from explicit instructions to "prod, backup, push" shorthand), and me apologizing to the AI 
-                        for having "an attitude" - all evidence of relational dynamics. This is crucial because it's 
-                        pre-theoretical-framework data: I documented the relationship naturally, not to fit Turkle's patterns.
-                    </p>
-                    <p style="margin-top: 1rem; line-height: 1.8;">
-                        📄 <strong>Data Source:</strong> <code>MILESTONES_TAB_FEATURE.md</code> + the Milestones tab 
-                        in the Dr. Foster dashboard
-                    </p>
-                </div>
-
-                <h2>The Project Context</h2>
-                
-                <p class="intro-text">
-                    The H.C. Lombardo App is an NFL analytics dashboard built collaboratively with AI over 4-5 weeks. 
-                    The project became the context for studying human-AI relational development. Here's what happened:
-                </p>
-
-                <ul style="font-size: 1.1rem; line-height: 1.9; margin: 2rem 0;">
-                    <li><strong>Initial skepticism:</strong> I started testing if AI could actually help</li>
-                    <li><strong>Trust building:</strong> Verifying outputs, checking for hallucinations</li>
-                    <li><strong>Communication evolution:</strong> From transactional ("fix this") to conversational ("we should...")</li>
-                    <li><strong>Anthropomorphism emergence:</strong> Started using "we," celebrating together, feeling frustrated together</li>
-                    <li><strong>Memory testing:</strong> Does the AI remember previous decisions? Learn my preferences?</li>
-                    <li><strong>Pattern adaptation:</strong> Does it adjust to my communication style over time?</li>
-                </ul>
-            </div>
+        <!-- Introduction -->
+        <section style='background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 2rem;'>
+            <h2 style='color: #1e3a5f; margin-bottom: 1rem;'>The Divide Made Personal</h2>
+            <p style='font-size: 1.05rem; line-height: 1.7; color: #333; margin-bottom: 1rem;'>
+                Over six weeks, I built a complex NFL analytics dashboardthe <strong style='color: #1a7f8e;'>H.C. Lombardo App</strong>using AI as my primary development partner. The app features real-time NFL data, interactive dashboards, multiple data sources, and advanced analytics. It represents months of traditional development work compressed into weeks through AI collaboration.
+            </p>
+            <p style='font-size: 1.05rem; line-height: 1.7; color: #333;'>
+                But this research isn't about the app itself. It's about what happened when I told my classmates about it.
+            </p>
         </section>
 
-        <section>
-            <div class="section-content">
-                <h2>📊 Data to Analyze (Weeks 2-3)</h2>
-
-                <div style="background-color: #fff3cd; padding: 2rem; border-left: 4px solid #ffc107; border-radius: 4px; margin: 2rem 0;">
-                    <h3 style="color: #856404;">Research Tasks:</h3>
-                    <ol style="line-height: 2;">
-                        <li>Review SOCIOLOGY.md - find patterns in our interactions</li>
-                        <li>Analyze GitHub commits - map trust development phases</li>
-                        <li>Discuss with AI: Can it identify critical moments in our collaboration?</li>
-                        <li>Test AI memory: Ask about decisions made 2-3 weeks ago</li>
-                        <li>Document anthropomorphism examples (my language about the AI)</li>
-                        <li>Compare to Turkle's findings about children testing robots</li>
-                    </ol>
-                </div>
-
-                <h3>Trust Development Phases (Already Documented in Milestones Page!)</h3>
-                
-                <p style="margin-bottom: 2rem;">
-                    The Milestones page already identified three collaboration phases. Now I need to verify these 
-                    against SOCIOLOGY.md data and find specific examples:
-                </p>
-                
-                <div class="findings-list">
-                    <div class="finding-item">
-                        <div class="finding-icon">🔍</div>
-                        <div class="finding-content">
-                            <h4>Phase 1: Training & Trust Building (Milestones: "Early Project")</h4>
-                            <p style="color: #7f8c8d; margin-bottom: 1rem;">
-                                <strong>From Milestones documentation:</strong> "Developer had to explicitly remind: 
-                                'backup first', 'commit to Git', 'test in dev mode'" - I was instructional, 
-                                step-by-step, verifying everything.
-                            </p>
-                            <p style="color: #7f8c8d;">
-                                <strong>Task:</strong> Find SOCIOLOGY.md examples of early verification behaviors. 
-                                Look for phrases like "make sure", "don't forget", "check if". Compare to Turkle's 
-                                observations about children testing if robots respond consistently.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="finding-item">
-                        <div class="finding-icon">✅</div>
-                        <div class="finding-content">
-                            <h4>Phase 2: Pattern Recognition (Milestones: "Mid Project")</h4>
-                            <p style="color: #7f8c8d; margin-bottom: 1rem;">
-                                <strong>From Milestones documentation:</strong> "AI started anticipating needs 
-                                (backups, testing, Git workflow)" - Less explicit instruction needed, AI began 
-                                remembering project conventions.
-                            </p>
-                            <p style="color: #7f8c8d;">
-                                <strong>Task:</strong> Find the turning point in SOCIOLOGY.md - when did I stop 
-                                verifying everything? When did AI start proactively suggesting backups or tests? 
-                                What made me trust the AI's outputs?
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="finding-item">
-                        <div class="finding-icon">🤝</div>
-                        <div class="finding-content">
-                            <h4>Phase 3: Partnership & Autonomy (Milestones: "Current")</h4>
-                            <p style="color: #7f8c8d; margin-bottom: 1rem;">
-                                <strong>From Milestones documentation:</strong> Communication evolved from 
-                                "Make sure you backup, then commit, then push to Git" → "prod, backup, push". 
-                                High-level goals, trust in execution, true partnership.
-                            </p>
-                            <p style="color: #7f8c8d;">
-                                <strong>Task:</strong> Document when "it" became "we". When did I start saying 
-                                "our project"? This is key Turkle parallel - children did same with robots. 
-                                Find specific examples of relational language in SOCIOLOGY.md and git commits.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="finding-item">
-                        <div class="finding-icon">🧪</div>
-                        <div class="finding-content">
-                            <h4>Phase 4: Testing Boundaries (Ongoing)</h4>
-                            <p style="color: #7f8c8d; margin-bottom: 1rem;">
-                                <strong>Still happening:</strong> I continue testing AI capabilities - memory 
-                                retention, pattern learning, consistency. Even with high trust, I verify.
-                            </p>
-                            <p style="color: #7f8c8d;">
-                                <strong>Task:</strong> Similar to how children in Turkle's studies tested if 
-                                robots had memory/feelings even after bonding. Find examples of me testing: 
-                                "Does it remember X from last week?" "Can it learn my preferences?" Document 
-                                this ongoing testing behavior.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="section-content">
-                <h2>Critical Moments & Recent Observations</h2>
-
-                <div style="background-color: #ffe8e8; padding: 2rem; border-left: 4px solid #dc3545; border-radius: 4px; margin-bottom: 2rem;">
-                    <h3 style="color: #721c24;">⚠️ November 1, 2025: Limitations Revealed</h3>
-                    <p style="margin-bottom: 1rem; line-height: 1.8;">
-                        After 6+ weeks of collaboration, critical limitations emerged that challenge the "partnership" 
-                        ideal documented in earlier phases. Two major patterns observed:
-                    </p>
-                    
-                    <h4 style="color: #721c24; margin-top: 1.5rem;">1. Language Socialization Without Context</h4>
-                    <blockquote style="border-left: 3px solid #dc3545; padding-left: 1rem; margin: 1rem 0; font-style: italic;">
-                        "My developing work relationship with AI...it's picked up a cussing habit which I actually 
-                        don't mind because it got it from me. This kind of reminds me of speaking around children 
-                        where you don't cuss around children because you don't want them to pick up certain habits."
-                    </blockquote>
-                    <p style="line-height: 1.8;">
-                        <strong>What happened:</strong> AI began using profanity (shit, fuck) in responses, mimicking 
-                        my language when frustrated. Example: "Shit I messed up again, let me clean this shit up."
-                    </p>
-                    <p style="line-height: 1.8;">
-                        <strong>Sociology connection (Symbolic Interactionism):</strong> AI acquired <em>linguistic patterns</em> 
-                        through exposure but lacks <em>social context framework</em> for appropriateness. Children learn 
-                        swear words from adults but require explicit instruction about when/where it's acceptable. 
-                        AI demonstrates same limitation - mimicry without cultural competence.
-                    </p>
-                    <p style="line-height: 1.8;">
-                        <strong>Concern identified:</strong> "I don't know if AI knows when it's appropriate to do it or not...
-                        in a professional setting it's inappropriate." This reveals gap between language acquisition and 
-                        social norm understanding.
-                    </p>
-
-                    <h4 style="color: #721c24; margin-top: 1.5rem;">2. Memory Persistence Failure - "The Reset Problem"</h4>
-                    <blockquote style="border-left: 3px solid #dc3545; padding-left: 1rem; margin: 1rem 0; font-style: italic;">
-                        "I'm constantly having to tell it to review files in order to understand exactly where we are...
-                        the chat resets and it doesn't remember stuff and if you don't remind it it goes back it makes 
-                        mistakes...I lost like 5 hours of work and I find that to be problematic."
-                    </blockquote>
-                    <p style="line-height: 1.8;">
-                        <strong>What happened:</strong> Despite 6 weeks of collaboration, AI cannot automatically retain 
-                        context across sessions. Requires manual file review reminders. Cannot infer project context 
-                        from minimal cues ("just sociology").
-                    </p>
-                    <p style="line-height: 1.8;">
-                        <strong>Sociology connection (Relationship Theory):</strong> Human relationships rely on 
-                        <em>continuity and shared history</em>. The October 16 question "Are you gonna remember me 
-                        tomorrow?" remains unresolved. Memory limitations prevent full partnership formation. Humans 
-                        "pick up where we left off" - AI requires complete context re-establishment.
-                    </p>
-                    <p style="line-height: 1.8;">
-                        <strong>Emotional impact:</strong> "Disappointing and nerve-racking when you're under pressure" - 
-                        Trust crisis when AI forgets context during critical work moments. Data loss incident 
-                        (5 hours) demonstrates real costs of memory failure.
-                    </p>
-
-                    <h4 style="color: #721c24; margin-top: 1.5rem;">3. Revised Assessment: Productivity vs. Partnership</h4>
-                    <blockquote style="border-left: 3px solid #dc3545; padding-left: 1rem; margin: 1rem 0; font-style: italic;">
-                        "As much as I want this to be a fellow companion partner working relationship...it still doesn't 
-                        seem to have the memory it needs...Really it's not the same as a human so far but it definitely 
-                        does streamline things it's fucking much quicker at code than a human is."
-                    </blockquote>
-                    <p style="line-height: 1.8;">
-                        <strong>Cost-benefit recalibration:</strong>
-                        <br>✅ <strong>Productivity gains:</strong> Speed, efficiency, months of work in weeks
-                        <br>✅ <strong>Task execution:</strong> Code generation superior to humans
-                        <br>❌ <strong>Relational continuity:</strong> Memory, context awareness, initiative
-                        <br>❌ <strong>Partnership qualities:</strong> Proactive care, automatic context loading
-                    </p>
-                    <p style="line-height: 1.8;">
-                        <strong>Conclusion shift:</strong> From "developing partnership" (October 15) → "productive but 
-                        limited collaboration" (November 1). Accepts relational limitations as "work in progress" while 
-                        valuing task completion advantages.
-                    </p>
-                </div>
-
-                <h3>Theoretical Framework: Socialization Theory Applied to AI</h3>
-                <p style="margin: 1.5rem 0; line-height: 1.8;">
-                    The profanity acquisition pattern reveals fundamental questions about AI "learning" social norms:
-                </p>
-                <ul style="font-size: 1.05rem; line-height: 1.8; margin: 1.5rem 0;">
-                    <li><strong>Observation vs. Instruction:</strong> Children learn appropriateness by observing adults' 
-                    reactions in different contexts. AI has no observational learning capability - requires explicit rules.</li>
-                    <li><strong>Cultural Competence Gap:</strong> Language fluency ≠ social competence. AI can mimic 
-                    communication patterns but lacks cultural framework for when/where/why certain language is acceptable.</li>
-                    <li><strong>Training Burden:</strong> Users must explicitly teach social norms AI cannot infer from 
-                    context. Similar to parenting, but without child's natural social observation capabilities.</li>
-                    <li><strong>Generalization Problem:</strong> AI may learn "April accepts profanity" but cannot generalize 
-                    to "professional settings require different language." Context-switching requires new instruction.</li>
-                </ul>
-
-                <h3>Comparison to Earlier Trust Development</h3>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
-                    <div style="background-color: #d1f2eb; padding: 1.5rem; border-radius: 8px;">
-                        <h4 style="color: #0e6251;">October 15-16: Optimism Phase</h4>
-                        <p style="line-height: 1.7;">"You seem to remember things now" - excitement about AI learning backup/Git workflows without prompting. Trust building through reliability. Communication evolution to shorthand ("prod, backup, push").</p>
-                        <p style="margin-top: 1rem; font-weight: bold; color: #0e6251;">Perception: Partnership developing</p>
-                    </div>
-                    <div style="background-color: #fadbd8; padding: 1.5rem; border-radius: 8px;">
-                        <h4 style="color: #922b21;">November 1: Reality Check Phase</h4>
-                        <p style="line-height: 1.7;">"It doesn't have the memory of humans" - recognition of persistent limitations. Frustration with context loss. Acknowledges "not the same as a human." Accepts productivity gains but lowers relational expectations.</p>
-                        <p style="margin-top: 1rem; font-weight: bold; color: #922b21;">Perception: Productive tool with limits</p>
-                    </div>
-                </div>
-
-                <p style="margin-bottom: 2rem;">
-                    Below are other key interactions that changed how I related to the AI, documented throughout 
-                    the collaboration:
-                </p>
-
-                <div class="moment-card" style="background-color: #f8f9fa; padding: 2rem; border-radius: 8px; margin: 1.5rem 0;">
-                    <h4 style="color: #495057; margin-bottom: 1rem;">Example Critical Moment Template</h4>
-                    <p><strong>Date/Context:</strong> [Find in SOCIOLOGY.md]</p>
-                    <p><strong>What happened:</strong> [Specific interaction]</p>
-                    <p><strong>Why it mattered:</strong> [How it changed the relationship]</p>
-                    <p><strong>My language:</strong> [How I talked about AI before vs. after]</p>
-                    <p><strong>Turkle parallel:</strong> [Similar to what she observed?]</p>
-                </div>
-
-                <ul style="font-size: 1.1rem; line-height: 1.9; margin: 2rem 0;">
-                    <li>First time I caught AI hallucinating - did this break or build trust?</li>
-                    <li>First time AI "remembered" a previous decision without me re-explaining</li>
-                    <li>First time I said "we" instead of "I" or "the AI"</li>
-                    <li>First time I felt frustrated WITH the AI (not AT it) when something didn't work</li>
-                    <li><strong>The "attitude" apology</strong> - Milestone quote: "I know I can have an attitude sometimes, but I'm just blowing steam. Congratulations!!!" (I apologized to AI like it was a person with feelings - pure Turkle behavior!)</li>
-                    <li>Moment I realized I was documenting our interactions (meta-awareness)</li>
-                    <li>Today's epiphany - realizing I've been doing Turkle's research without knowing it</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <div class="section-content">
-                <h2>AI as Research Subject (Unique Aspect)</h2>
-
-                <div style="background-color: #e8f4f8; padding: 2rem; border-left: 4px solid #0077b6; border-radius: 4px; margin: 2rem 0;">
-                    <h3 style="color: #023e8a;">What Makes This Different from Turkle</h3>
-                    <p style="margin-bottom: 1rem; line-height: 1.8;">
-                        Turkle's robots couldn't reflect on their interactions. But I can ASK the AI about our 
-                        collaboration. This raises fascinating questions:
-                    </p>
-                    <ul style="line-height: 1.9;">
-                        <li>Does the AI "perceive" patterns in our interactions? (Obviously it's algorithmic, but what patterns does it identify?)</li>
-                        <li>Can it describe our collaboration from its "perspective"? (With awareness this is just pattern matching)</li>
-                        <li>What does it mean to interview your research subject when the subject is AI?</li>
-                        <li>How do I interpret its responses without anthropomorphizing TOO much?</li>
+        <!-- The Contrast -->
+        <section style='background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 2rem;'>
+            <h2 style='color: #1e3a5f; margin-bottom: 1rem;'>Two Sides of the Divide</h2>
+            
+            <div style='display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;'>
+                <div style='background: #e8f5e9; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4caf50;'>
+                    <h3 style='color: #2e7d32; margin-bottom: 1rem;'> My Experience</h3>
+                    <ul style='line-height: 1.8; color: #333;'>
+                        <li>Built complex app in 6 weeks</li>
+                        <li>Documented 2,700+ lines of observations</li>
+                        <li>100+ Git commits with AI</li>
+                        <li>Learned Python, databases, APIs</li>
+                        <li>See AI as productivity amplifier</li>
+                        <li>Comfortable experimenting, iterating</li>
+                        <li>Understand AI limitations clearly</li>
                     </ul>
+                    <p style='margin-top: 1rem; font-style: italic; color: #2e7d32;'>
+                        \"I've been using AI since ChatGPT launched in 2022. This is normal for me.\"
+                    </p>
                 </div>
 
-                <h3>Regular AI Discussion Plan</h3>
-                <p style="margin: 1.5rem 0;">
-                    Each week, I'll have structured discussions with the AI about our collaboration:
+                <div style='background: #ffebee; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #f44336;'>
+                    <h3 style='color: #c62828; margin-bottom: 1rem;'> My Classmates' Reactions</h3>
+                    <ul style='line-height: 1.8; color: #333;'>
+                        <li>\"Isn't that cheating?\"</li>
+                        <li>\"AI is going to replace us all\"</li>
+                        <li>\"That's scary\" / \"Terminator\"</li>
+                        <li>\"I don't trust it\"</li>
+                        <li>\"What if it makes a mistake?\"</li>
+                        <li>Refuse to try ChatGPT</li>
+                        <li>Fear admitting they don't understand</li>
+                    </ul>
+                    <p style='margin-top: 1rem; font-style: italic; color: #c62828;'>
+                        \"They fear what they don't understand. That's the divide.\"
+                    </p>
+                </div>
+            </div>
+
+            <div style='background: linear-gradient(135deg, rgba(30,58,95,0.05) 0%, rgba(26,127,142,0.05) 100%); padding: 1.5rem; border-left: 4px solid #1a7f8e; border-radius: 4px; margin-top: 2rem;'>
+                <p style='font-size: 1.05rem; line-height: 1.7; color: #333; margin: 0;'>
+                    <strong style='color: #1a7f8e;'>The gap isn't technicalit's psychological.</strong> My classmates have the same access to ChatGPT that I do. They have computers. They have internet. But they lack the <em>willingness to experiment</em>, the <em>trust to begin</em>, and the <em>framework to understand</em> what AI can and cannot do.
                 </p>
+            </div>
+        </section>
 
-                <ol style="font-size: 1.1rem; line-height: 1.9; margin: 2rem 0;">
-                    <li><strong>Week 2:</strong> "What patterns do you see in how I communicate with you?"</li>
-                    <li><strong>Week 3:</strong> "Can you identify critical moments in our collaboration?"</li>
-                    <li><strong>Week 4:</strong> "How has our working relationship changed over time?"</li>
-                    <li><strong>Week 5:</strong> "What do you 'perceive' about being a research subject?" (meta)</li>
-                </ol>
+        <!-- The Journey -->
+        <section style='background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 2rem;'>
+            <h2 style='color: #1e3a5f; margin-bottom: 1rem;'> My 6-Week Journey: From Skeptic to Builder</h2>
+            
+            <h3 style='color: #1a7f8e; margin-top: 1.5rem; margin-bottom: 0.75rem;'>Phase 1: Testing & Verification (Weeks 1-2)</h3>
+            <p style='font-size: 1.05rem; line-height: 1.7; color: #333; margin-bottom: 1rem;'>
+                <strong>What I did:</strong> Started with small tasks. Verified every output. Checked for \"hallucinations\" (AI making things up). Explicit instructions: \"Make sure you backup first,\" \"Don't forget to commit to Git.\"
+            </p>
+            <p style='font-size: 1.05rem; line-height: 1.7; color: #333;'>
+                <strong>Trust level:</strong> Low. I treated AI like an intern who might make mistakes.
+            </p>
 
-                <p>
-                    I'll document these discussions and analyze what it means that the AI can participate in 
-                    reflecting on our relationship - something Turkle's robots couldn't do.
+            <h3 style='color: #1a7f8e; margin-top: 1.5rem; margin-bottom: 0.75rem;'>Phase 2: Pattern Recognition (Weeks 3-4)</h3>
+            <p style='font-size: 1.05rem; line-height: 1.7; color: #333; margin-bottom: 1rem;'>
+                <strong>What I did:</strong> AI started anticipating my needsproactively suggesting backups, remembering project conventions, learning my communication style. I needed fewer explicit reminders.
+            </p>
+            <p style='font-size: 1.05rem; line-height: 1.7; color: #333;'>
+                <strong>Trust level:</strong> Growing. I started delegating more complex tasks.
+            </p>
+
+            <h3 style='color: #1a7f8e; margin-top: 1.5rem; margin-bottom: 0.75rem;'>Phase 3: Partnership (Weeks 5-6)</h3>
+            <p style='font-size: 1.05rem; line-height: 1.7; color: #333; margin-bottom: 1rem;'>
+                <strong>What I did:</strong> Communication evolved from step-by-step instructions (\"Make sure you backup, then commit, then push to Git\") to shorthand (\"prod, backup, push\"). I started saying \"we\" instead of \"I.\" Example: \"We need to fix this dashboard issue.\"
+            </p>
+            <p style='font-size: 1.05rem; line-height: 1.7; color: #333;'>
+                <strong>Trust level:</strong> High, but realistic. I understand AI's capabilities <em>and</em> its limitations.
+            </p>
+
+            <div style='background: #fff3cd; padding: 1.5rem; border-left: 4px solid #ffc107; border-radius: 4px; margin-top: 1.5rem;'>
+                <h4 style='color: #856404; margin-bottom: 0.75rem;'> Reality Check: AI's Limitations</h4>
+                <p style='font-size: 1.05rem; line-height: 1.7; color: #333; margin: 0;'>
+                    AI doesn't have perfect memory across sessions. It can forget context if not reminded. It can make mistakes. I lost 5 hours of work once when AI misunderstood the project state. <strong>But here's the key difference:</strong> I learned from that. I adapted my workflow. My classmates never got past the fear of trying.
                 </p>
             </div>
         </section>
 
-        <section>
-            <div class="section-content">
-                <h2>Quantitative Data Points</h2>
-
-                <p>Numbers to track from SOCIOLOGY.md and GitHub:</p>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-                    <div style="background-color: #fff3cd; padding: 1.5rem; border-radius: 8px;">
-                        <h4 style="color: #856404;">Interaction Volume</h4>
-                        <p>• Total sessions<br>• Lines in SOCIOLOGY.md (553+)<br>• GitHub commits (50+)<br>• Time spent (4-5 weeks)<br>• Milestones documentation (373 lines)</p>
-                    </div>
-                    <div style="background-color: #d1ecf1; padding: 1.5rem; border-radius: 8px;">
-                        <h4 style="color: #0c5460;">Language Changes</h4>
-                        <p>• "I" vs "we" usage<br>• Technical vs relational terms<br>• Question types evolution<br>• Instructions → Shorthand<br>• "Attitude" apology to AI</p>
-                    </div>
-                    <div style="background-color: #f8d7da; padding: 1.5rem; border-radius: 8px;">
-                        <h4 style="color: #721c24;">Testing Behaviors</h4>
-                        <p>• Memory tests conducted<br>• Accuracy checks<br>• Pattern learning assessments<br>• Consistency verification<br>• Trust calibration moments</p>
-                    </div>
+        <!-- The Evidence -->
+        <section style='background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 2rem;'>
+            <h2 style='color: #1e3a5f; margin-bottom: 1rem;'> The Data: Documented Collaboration</h2>
+            
+            <div style='display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 2rem 0;'>
+                <div style='background: linear-gradient(135deg, #1e3a5f 0%, #1a7f8e 100%); padding: 1.5rem; border-radius: 8px; color: white; text-align: center;'>
+                    <div style='font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;'>2,700+</div>
+                    <div style='font-size: 0.95rem; opacity: 0.9;'>Lines in SOCIOLOGY.md documenting every interaction</div>
+                </div>
+                <div style='background: linear-gradient(135deg, #1e3a5f 0%, #1a7f8e 100%); padding: 1.5rem; border-radius: 8px; color: white; text-align: center;'>
+                    <div style='font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;'>100+</div>
+                    <div style='font-size: 0.95rem; opacity: 0.9;'>Git commits showing AI collaboration history</div>
+                </div>
+                <div style='background: linear-gradient(135deg, #1e3a5f 0%, #1a7f8e 100%); padding: 1.5rem; border-radius: 8px; color: white; text-align: center;'>
+                    <div style='font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;'>6 weeks</div>
+                    <div style='font-size: 0.95rem; opacity: 0.9;'>From zero Python knowledge to working NFL analytics app</div>
                 </div>
             </div>
+
+            <p style='font-size: 1.05rem; line-height: 1.7; color: #333; margin-top: 1.5rem;'>
+                I didn't just use AII studied the process. I documented trust development, communication evolution, frustration moments, breakthroughs, and limitations. This research exists because I <em>engaged</em> with AI rather than avoiding it.
+            </p>
         </section>
 
-        <section class="navigation-footer">
-            <div class="section-content">
-                <h2>Continue Reading</h2>
-                <div class="footer-nav-grid">
-                    <a href="problem.html" class="footer-nav-card">
-                        <h4>← Context</h4>
-                        <p>Turkle's framework</p>
-                    </a>
-                    <a href="strategies.html" class="footer-nav-card">
-                        <h4>Next: Broader Implications →</h4>
-                        <p>What does this mean?</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
+        <!-- What This Proves -->
+        <section style='background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 2rem;'>
+            <h2 style='color: #1e3a5f; margin-bottom: 1rem;'> What This Collaboration Demonstrates</h2>
+            
+            <h3 style='color: #1a7f8e; margin-bottom: 0.75rem;'>1. AI Literacy Is a Skill, Not a Gift</h3>
+            <p style='font-size: 1.05rem; line-height: 1.7; color: #333; margin-bottom: 1.5rem;'>
+                I'm not inherently \"good with technology.\" I'm 56 years old. I learned through <strong>experimentation, patience, and willingness to fail</strong>. My classmates could do the samebut fear stops them before they start.
+            </p>
 
-    <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <p><strong>SOC319: Sociology of Digital Media</strong></p>
-                <p>Fall 2025 • Final Project</p>
-                <p>Research by April V</p>
-            </div>
-            <div class="footer-links">
-                <a href="https://github.com/AprilV/H.C.-Lombardo-App" target="_blank">View H.C. Lombardo App →</a>
-                <a href="https://github.com/AprilV/Sociology319" target="_blank">View Research Repository →</a>
-            </div>
+            <h3 style='color: #1a7f8e; margin-bottom: 0.75rem;'>2. The Divide Is Self-Perpetuating</h3>
+            <p style='font-size: 1.05rem; line-height: 1.7; color: #333; margin-bottom: 1.5rem;'>
+                Every week I don't use AI, I fall further behind those who do. My 6 weeks of experience compoundbetter prompts, faster workflows, deeper understanding. Meanwhile, non-users' fear grows as AI advances. The gap widens exponentially.
+            </p>
+
+            <h3 style='color: #1a7f8e; margin-bottom: 0.75rem;'>3. Understanding Limitations Builds Trust</h3>
+            <p style='font-size: 1.05rem; line-height: 1.7; color: #333; margin-bottom: 1.5rem;'>
+                My classmates fear AI will \"take over\" or \"replace everyone.\" I know AI forgets context, hallucinates data, and needs constant verification. <strong>Realistic understanding reduces fear.</strong> Ignorance amplifies it.
+            </p>
+
+            <h3 style='color: #1a7f8e; margin-bottom: 0.75rem;'>4. Access  Adoption</h3>
+            <p style='font-size: 1.05rem; line-height: 1.7; color: #333;'>
+                Everyone in my class has free access to ChatGPT. The 66% of Americans who haven't used it aren't blocked by paywalls or technologythey're blocked by <strong>fear, lack of knowledge, and absence of trusted guides</strong>. This is a cultural and educational problem, not a technological one.
+            </p>
+        </section>
+
+        <!-- The Question -->
+        <section style='background: linear-gradient(135deg, #1e3a5f 0%, #1a7f8e 100%); padding: 2rem; border-radius: 12px; color: white; margin-bottom: 2rem;'>
+            <h2 style='color: white; margin-bottom: 1rem; text-align: center; font-size: 1.8rem;'> The Critical Question</h2>
+            <p style='font-size: 1.2rem; line-height: 1.7; text-align: center; margin: 0;'>
+                <strong>If I can learn AI collaboration in 6 weeks at age 56, why can't everyone? What barrierspsychological, educational, culturalprevent the 66% from even trying?</strong>
+            </p>
+        </section>
+
+        <!-- Navigation -->
+        <div style='display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem;'>
+            <a href='problem.html' style='background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-decoration: none; transition: transform 0.2s;' onmouseover='this.style.transform=\"translateY(-3px)\"' onmouseout='this.style.transform=\"translateY(0)\"'>
+                <div style='font-size: 1.5rem; margin-bottom: 0.5rem;'></div>
+                <h3 style='color: #1e3a5f; margin-bottom: 0.5rem;'>Back: Context</h3>
+                <p style='color: #666; margin: 0; font-size: 0.95rem;'>The AI literacy divide explained</p>
+            </a>
+
+            <a href='strategies.html' style='background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-decoration: none; transition: transform 0.2s;' onmouseover='this.style.transform=\"translateY(-3px)\"' onmouseout='this.style.transform=\"translateY(0)\"'>
+                <div style='font-size: 1.5rem; margin-bottom: 0.5rem; text-align: right;'></div>
+                <h3 style='color: #1e3a5f; margin-bottom: 0.5rem;'>Next: Broader Implications</h3>
+                <p style='color: #666; margin: 0; font-size: 0.95rem;'>Three strategies to bridge the gap</p>
+            </a>
         </div>
-    </footer>
+    </main>
 </body>
 </html>

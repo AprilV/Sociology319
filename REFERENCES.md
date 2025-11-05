@@ -112,6 +112,25 @@
 
 ---
 
+## Additional Sources (Course Readings - Digital Divides)
+
+### 6. Web Accessibility and Disability Rights
+
+**Supple, Richard.** (2019, September 30). "Domino's Wants to Slice Away at the Americans With Disabilities Act." *Slate*. https://slate.com/technology/2019/09/supreme-court-dominos-web-accessibility-visually-impaired.html
+
+- **Length:** ~10 pages (first-person account)
+- **Key Concepts:**
+  - ADA applicability to websites and mobile apps
+  - Screen reader technology and accessibility barriers
+  - Corporate resistance to web accessibility requirements
+  - Economic disparity for people with disabilities in digital economy
+- **Key Finding:** Supreme Court declined Domino's appeal (Oct 2019) - ADA applies to digital platforms. 61 million Americans with disabilities risk exclusion from modern economy without web accessibility requirements.
+- **Why This Source:** Demonstrates that digital divide includes accessibility dimension. Raises question: Is AI accessible to people with disabilities? Do screen readers work with ChatGPT/GitHub Copilot? Does AI literacy training consider disability access?
+- **Access:** Free online at Slate
+- **Note:** First-person narrative by legally blind author - provides lived experience perspective similar to autoethnographic approach
+
+---
+
 ## How These Sources Support My Research
 
 ### Theoretical Foundation
