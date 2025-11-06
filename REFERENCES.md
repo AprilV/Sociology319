@@ -1,210 +1,110 @@
 # References for SOC319 Research Project
 
-## As-If Partnership: Adult-AI Collaboration in the Robotic Moment
+## Digital Divide in AI Literacy
+
+**Course:** SOC319 - Social Issues & Technology  
+**Student:** April V. Sykes  
+**Topic:** Unequal access to AI literacy and its impact on workforce/educational opportunities  
+**Last Updated:** November 5, 2025
 
 ---
 
-## Primary Theoretical Framework
+## ✅ CURRENT SOURCES (5 Research Organizations)
 
-**Turkle, Sherry.** (2011). *Alone Together: Why We Expect More from Technology and Less from Each Other.* Basic Books.
+### 1. Pew Research Center - ChatGPT Adoption
+**Pew Research Center.** (2025, June 25). *34% of U.S. adults have used ChatGPT, about double the share in 2023.* https://www.pewresearch.org/short-reads/2025/06/25/34-of-us-adults-have-used-chatgpt-about-double-the-share-in-2023/
 
-- **Focus:** Part Two — "Of Robots and Moonlight" (pp. 19-154)
-- **Content:** Turkle's ethnographic research on children developing relational bonds with robots (AIBO, Furby, Paro, My Real Baby)
-- **Key Concepts:** 
-  - "As-if relationships" — humans interacting with AI *as if* it's a genuine partner
-  - "Evocative objects/behaviors" — technology that triggers emotional responses
-  - "The robotic moment" — cultural shift toward relating to machines as potential partners
-  - "Authenticity vs. performance" — can simulated care substitute for genuine care?
-- **Relevance:** Primary theoretical framework for understanding my 6+ weeks of human-AI collaboration
+**Key Stat:** Only 34% of Americans have tried ChatGPT - 66% have never used it  
+**Why This Matters:** Shows massive adoption gap - AI literacy divide is REAL
 
 ---
 
-## Supporting Sources (5 Required)
+### 2. Pew Research Center - American Views on AI
+**Pew Research Center.** (2025, September 17). *How Americans view AI and its impact on people and society.* https://www.pewresearch.org/science/2025/09/17/how-americans-view-ai-and-its-impact-on-people-and-society/
 
-### 1. Social Responses to Computers (CASA Framework)
-
-**Nass, Clifford, and Youngme Moon.** (2000). "Machines and Mindlessness: Social Responses to Computers." *Journal of Social Issues*, 56(1), 81-103.
-
-- **Length:** ~15-20 pages
-- **Key Concepts:**
-  - Media equation — humans treat computers like real people
-  - CASA (Computers As Social Actors) paradigm
-  - Mindless application of social rules to technology
-- **Why This Source:** Foundational research demonstrating humans unconsciously apply social norms to computers. Explains why I treat AI with politeness, reciprocity, and partnership framing despite knowing it's algorithmic.
-- **Access:** University database (JSTOR, PsycINFO, Web of Science)
+**Key Finding:** Public fear and distrust of AI  
+**Why This Matters:** Psychological barriers to adoption - not just access
 
 ---
 
-### 2. Autoethnography Methodology
+### 3. Pew Research Center - Workplace AI Use
+**Pew Research Center.** (2025, October 6). *About 1 in 5 U.S. workers now use AI in their job, up since last year.* https://www.pewresearch.org/short-reads/2025/10/06/about-1-in-5-us-workers-now-use-ai-in-their-job-up-since-last-year/
 
-**Ellis, Carolyn, Tony E. Adams, and Arthur P. Bochner.** (2011). "Autoethnography: An Overview." *Forum: Qualitative Social Research*, 12(1), Article 10.
-
-- **Length:** ~15 pages
-- **Key Concepts:**
-  - Autoethnography as valid qualitative research method
-  - Researcher-as-subject approach
-  - Reflexivity and positionality
-  - Personal narrative as sociological data
-- **Why This Source:** Legitimizes autoethnographic methodology — studying one's own experience as valid sociological research. Addresses how researcher subjectivity and self-observation constitute rigorous data collection.
-- **Access:** **FREE ONLINE** at https://www.qualitative-research.net/index.php/fqs/article/view/1589
-- **Note:** Most accessible source — start here!
+**Key Stat:** Only 20% of workers use AI at work  
+**Why This Matters:** Workforce inequality - some gaining skills, most falling behind
 
 ---
 
-### 3. Anthropomorphism and Trust
+### 4. World Economic Forum - Future of Jobs
+**World Economic Forum.** (2024). *Future of Jobs Report 2024.* https://www.weforum.org/publications/the-future-of-jobs-report-2024/
 
-**Waytz, Adam, Joy Heafner, and Nicholas Epley.** (2014). "The Mind in the Machine: Anthropomorphism Increases Trust in an Autonomous Vehicle." *Journal of Experimental Social Psychology*, 52, 113-117.
-
-- **Length:** ~5 pages (SHORT — easiest read!)
-- **Key Concepts:**
-  - Anthropomorphism definition and mechanisms
-  - Relationship between mind attribution and trust
-  - Human tendency to see agency in non-human entities
-- **Key Finding:** Attributing mental states to machines increases user trust, even when users know the machine isn't conscious
-- **Why This Source:** Empirical evidence that anthropomorphizing technology increases trust and reliance. Directly supports my observed trust development pattern (Week 1: verify everything → Week 6: implement without checking).
-- **Access:** University database (ScienceDirect, PsycINFO)
+**Key Prediction:** AI skills will be essential for most jobs by 2030  
+**Why This Matters:** Those without AI literacy face economic disadvantage
 
 ---
 
-### 4. Long-Term Human-Computer Relationships
+### 5. McKinsey & Company - State of AI
+**McKinsey & Company.** (2024). *The state of AI in 2024: Gen AI's breakout year.* https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai
 
-**Bickmore, Timothy W., and Rosalind W. Picard.** (2005). "Establishing and Maintaining Long-Term Human-Computer Relationships." *ACM Transactions on Computer-Human Interaction*, 12(2), 293-327.
-
-- **Length:** ~35 pages total (but focus on relevant sections: Introduction, Related Work, Relationship Maintenance sections = ~10-15 pages)
-- **Key Concepts:**
-  - Relational agents vs. transactional interfaces
-  - Social-emotional communication with computers
-  - Relationship maintenance strategies over time
-  - Trust development in extended interactions
-- **Why This Source:** Research on how humans develop ongoing relationships with AI agents over extended periods. Distinguishes between transactional interactions vs. relational dynamics — matching my communication evolution from "create function X" to "we need to handle standings."
-- **Access:** ACM Digital Library (via university access)
+**Key Finding:** Companies adopting AI see productivity gains; those without fall behind  
+**Why This Matters:** Organizational-level divide mirrors individual-level divide
 
 ---
 
-### 5. GitHub Copilot Collaboration Study
+## ✅ PEER-REVIEWED ACADEMIC SOURCES (2)
 
-**Barke, Shraddha, Michael B. James, and Nadia Polikarpova.** (2023). "Grounded Copilot: How Programmers Interact with Code-Generating Models." *Proceedings of the ACM on Programming Languages*, 7(OOPSLA1), 85-111.
+### 6. Robinson et al. - Digital Inequalities 2.0
+**Robinson, L., Cotten, S. R., Ono, H., Quan-Haase, A., Mesch, G., Chen, W., Schulz, J., Hale, T. M., & Stern, M. J.** (2020). Digital inequalities 2.0: Legacy inequalities in the information age. *First Monday*, 25(7). https://doi.org/10.5210/fm.v25i7.10842
 
-- **Length:** ~27 pages (focus on User Study sections = ~10-15 pages)
-- **Key Concepts:**
-  - Human-AI pair programming dynamics
-  - Trust calibration with code-generating models
-  - Verification behaviors and acceptance patterns
-  - Programmer workflows with AI assistants
-- **Why This Source:** Recent empirical research on **GitHub Copilot specifically** — the exact tool I'm using. Documents how programmers collaborate with AI pair programming assistants, including trust development, communication patterns, and verification strategies.
-- **Relevance:** Provides workplace context for adult-AI collaboration, distinguishing it from Turkle's children-robot play scenarios
-- **Access:** ACM Digital Library or search "Grounded Copilot OOPSLA 2023" (may have free preprint on authors' websites)
+**Journal:** First Monday (peer-reviewed, open access)  
+**Key Concept:** Digital inequalities persist and evolve with new technologies - AI literacy is NEW form of digital divide  
+**Why This Matters:** Explains how AI literacy gap mirrors historical digital divides (internet access → digital skills → AI skills)  
+**Access:** FREE online at https://doi.org/10.5210/fm.v25i7.10842
 
 ---
 
-### 5. [ALTERNATIVE] Workplace AI Collaboration (If Copilot study unavailable)
+### 7. Dwivedi et al. - AI Adoption Challenges
+**Dwivedi, Y. K., Hughes, L., Ismagilova, E., et al.** (2021). Artificial Intelligence (AI): Multidisciplinary perspectives on emerging challenges, opportunities, and agenda for research, practice and policy. *International Journal of Information Management*, 57, 101994. https://doi.org/10.1016/j.ijinfomgt.2019.08.002
 
-**Jarrahi, Mohammad Hossein, David Askay, Ali Eshraghi, and Preston Smith.** (2019). "Artificial Intelligence and the Future of Work: Human-AI Symbiosis in Organizational Decision Making." *Business Horizons*, 62(4), 577-586.
-
-- **Length:** ~10 pages
-- **Key Concepts:**
-  - Human-AI symbiosis in professional contexts
-  - Complementary strengths of humans and AI
-  - Collaboration dynamics vs. replacement concerns
-  - Augmentation paradigm
-- **Why This Source (backup):** Broader workplace AI collaboration research if the Copilot-specific study is hard to access. Discusses human-AI symbiosis, complementary strengths, and collaboration dynamics in professional contexts.
-- **Access:** University database (ScienceDirect, Business Source Complete)
+**Journal:** International Journal of Information Management (highly ranked, peer-reviewed)  
+**Key Concepts:** Barriers to AI adoption across demographics, ethical concerns, skills gaps  
+**Why This Matters:** Documents psychological/educational barriers preventing AI adoption - not just technology access  
+**Access:** University library databases (ScienceDirect)
 
 ---
 
-## Additional Sources (Course Readings - Digital Divides)
-
-### 6. Web Accessibility and Disability Rights
-
-**Supple, Richard.** (2019, September 30). "Domino's Wants to Slice Away at the Americans With Disabilities Act." *Slate*. https://slate.com/technology/2019/09/supreme-court-dominos-web-accessibility-visually-impaired.html
-
-- **Length:** ~10 pages (first-person account)
-- **Key Concepts:**
-  - ADA applicability to websites and mobile apps
-  - Screen reader technology and accessibility barriers
-  - Corporate resistance to web accessibility requirements
-  - Economic disparity for people with disabilities in digital economy
-- **Key Finding:** Supreme Court declined Domino's appeal (Oct 2019) - ADA applies to digital platforms. 61 million Americans with disabilities risk exclusion from modern economy without web accessibility requirements.
-- **Why This Source:** Demonstrates that digital divide includes accessibility dimension. Raises question: Is AI accessible to people with disabilities? Do screen readers work with ChatGPT/GitHub Copilot? Does AI literacy training consider disability access?
-- **Access:** Free online at Slate
-- **Note:** First-person narrative by legally blind author - provides lived experience perspective similar to autoethnographic approach
-
----
-
-## How These Sources Support My Research
-
-### Theoretical Foundation
-**Turkle (2011)** provides the primary framework: as-if relationships, evocative behaviors, the robotic moment, authenticity vs. performance. My research extends her children-robot findings to adult-AI workplace context.
-
-### Psychological Mechanisms
-**Nass & Moon (2000)** + **Waytz et al. (2014)** explain *why* I unconsciously treat AI as social partner and why anthropomorphizing increased my trust over 6 weeks. These establish the psychological basis for "as-if relationships."
-
-### Methodological Legitimacy
-**Ellis et al. (2011)** validates autoethnography as rigorous qualitative method — my 2,700+ lines of documented self-observation constitutes valid sociological data, not just personal journaling.
-
-### Relational Development
-**Bickmore & Picard (2005)** documents how human-computer relationships develop over time, providing framework for my communication evolution from transactional to relational.
-
-### Contextual Application
-**Barke et al. (2023)** OR **Jarrahi et al. (2019)** situate my experience within broader human-AI collaboration research, showing relational dynamics emerge specifically in workplace AI tools like GitHub Copilot.
-
----
-
-## Reading Priority Order
-
-**If short on time, read in this order:**
-
-1. **Ellis et al. (2011)** — FREE, short (~15 pages), establishes methodology validity
-2. **Waytz et al. (2014)** — Shortest (~5 pages), core anthropomorphism concept
-3. **Turkle (2011) Part Two** — Primary framework (focus on chapters most relevant to your experience)
-4. **Nass & Moon (2000)** — CASA foundation (~15-20 pages)
-5. **Bickmore & Picard (2005)** OR **Barke et al. (2023)** — Either works for workplace context
-
-**Total estimated reading time:** 6-8 hours across all sources if you skim strategically
-
----
-
-## Access Tips
-
-- **Free sources:** Ellis et al. (2011) — start here!
-- **University library:** All others should be accessible via database
-- **Google Scholar trick:** Search title + "PDF" — often finds free author preprints
-- **Email authors:** If you can't access, email the lead author directly with subject "Student research request" — academics almost always send PDFs for free for educational purposes
-- **Library reference desk:** Can help you find hard-to-access papers
-
----
-
-## Citation Format Notes
-
-All citations above use **APA 7th edition** format (standard for sociology).
+## 📋 CITATION FORMAT: APA 7th Edition
 
 **In-text citation examples:**
-- (Turkle, 2011, p. 45)
-- (Nass & Moon, 2000)
-- (Waytz et al., 2014)
+- (Pew Research Center, 2025)
+- (World Economic Forum, 2024)
 
-**When quoting Turkle in your website:**
-> As Turkle (2011) describes, children developed "as-if relationships" with robots — "they relate to the robot as if it were sentient" despite knowing it's not alive (p. 28).
+**Full reference format:** See references.html page for complete APA formatting
 
 ---
 
-## Additional Sources to Consider (Optional - Beyond 6 Required)
+## 🚫 WHAT WAS REMOVED (OLD TOPIC SOURCES)
 
-If you want to deepen specific aspects:
+These sources were from the previous "Human-AI Collaboration" topic and are NO LONGER RELEVANT:
 
-- **On "computed concern" concept:** 
-  - Picard, Rosalind W. (1997). *Affective Computing*. MIT Press.
-  - (Short sections on emotion recognition and response)
+- ❌ Turkle's "Alone Together" (robot relationships)
+- ❌ Nass & Moon CASA theory
+- ❌ Ellis autoethnography methodology
+- ❌ Waytz anthropomorphism study
+- ❌ Bickmore computer relationships
+- ❌ Barke GitHub Copilot study
+- ❌ Jarrahi workplace AI symbiosis
 
-- **On workplace trust with AI:**
-  - Lee, J. D., & See, K. A. (2004). "Trust in Automation: Designing for Appropriate Reliance." *Human Factors*, 46(1), 50-80.
-
-- **On symbolic interactionism (your "we" language evolution):**
-  - Blumer, Herbert. (1969). *Symbolic Interactionism: Perspective and Method*. University of California Press.
-  - (Chapter 1 only, ~20 pages)
+**Why removed:** Current topic is DIGITAL DIVIDE, not human-AI relationship dynamics. Your personal experience is used as CASE STUDY evidence, not theoretical framework.
 
 ---
 
-*Last updated: October 28, 2025*
-*Course: SOC319 Sociology of Digital Media, Fall 2025*
-*Researcher: April V*
+## ✅ NEXT STEP
+
+**Find 2 peer-reviewed sources this week** to complete the 7-source requirement (5 + 2).
+
+Then references are DONE and you can focus on writing strategies.html content.
+
+---
+
+*This file now correctly reflects the CURRENT topic: Digital Divide in AI Literacy*

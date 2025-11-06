@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridge the Divide - AI Literacy Game | SOC319</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .game-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .game-intro {
+            background: linear-gradient(135deg, rgba(30, 58, 95, 0.05) 0%, rgba(26, 127, 142, 0.05) 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .game-board {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        .scenario-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-teal);
+        }
+
+        .scenario-text {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .choices {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .choice-btn {
+            background: white;
+            border: 2px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .choice-btn:hover {
+            transform: translateX(8px);
+            border-color: var(--accent-teal);
+            background: linear-gradient(135deg, rgba(30, 58, 95, 0.05) 0%, rgba(26, 127, 142, 0.05) 100%);
+            box-shadow: 0 4px 12px rgba(26, 127, 142, 0.2);
+        }
+
+        .choice-btn.correct {
+            border-color: #28a745;
+            background: linear-gradient(135deg, rgba(40, 167, 69, 0.1) 0%, rgba(40, 167, 69, 0.05) 100%);
+        }
+
+        .choice-btn.incorrect {
+            border-color: #dc3545;
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.1) 0%, rgba(220, 53, 69, 0.05) 100%);
+        }
+
+        .choice-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .feedback {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 12px;
+            display: none;
+        }
+
+        .feedback.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .feedback.correct {
+            background: linear-gradient(135deg, rgba(40, 167, 69, 0.1) 0%, rgba(40, 167, 69, 0.05) 100%);
+            border-left: 4px solid #28a745;
+        }
+
+        .feedback.incorrect {
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.1) 0%, rgba(220, 53, 69, 0.05) 100%);
+            border-left: 4px solid #dc3545;
+        }
+
+        .score-display {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--collab-gradient);
+            color: white;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--collab-gradient);
+            transition: width 0.5s ease;
+        }
+
+        .next-btn {
+            background: var(--collab-gradient);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: none;
+            margin: 1.5rem auto 0;
+        }
+
+        .next-btn.show {
+            display: block;
+        }
+
+        .next-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(26, 127, 142, 0.4);
+        }
+
+        .final-results {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(30, 58, 95, 0.05) 0%, rgba(26, 127, 142, 0.05) 100%);
+            border-radius: 12px;
+        }
+
+        .final-results.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .result-emoji {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .result-message {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-navy);
+            margin-bottom: 1rem;
+        }
+
+        .result-score {
+            font-size: 2rem;
+            color: var(--accent-teal);
+            margin-bottom: 1.5rem;
+        }
+
+        .restart-btn {
+            background: var(--collab-gradient);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(26, 127, 142, 0.4);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header style="background: linear-gradient(135deg, #1e3a5f 0%, #1a7f8e 100%); color: white; padding: 1.5rem 2rem; text-align: center;">
+        <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem; font-weight: 600; color: #ffffff; text-shadow: 0 1px 3px rgba(0,0,0,0.2);">Bridge the Divide 🌉</h1>
+        <p style="font-size: 1.1rem; margin: 0.25rem 0;">An Interactive AI Literacy Game</p>
+        <p style="font-size: 0.9rem; margin: 0.25rem 0; opacity: 0.9;">SOC319 - Digital Divide Research</p>
+    </header>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">Digital Divide in AI Literacy</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="problem.html">Context</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="case-study.html">Case Study</a></li>
+                <li><a href="strategies.html">Strategies</a></li>
+                <li><a href="role.html">Reflexivity</a></li>
+                <li><a href="references.html">References</a></li>
+                <li><a href="game.html" class="active">🎮 Game</a></li>
+                <li><a href="about.html">About Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="game-container">
+        <div class="game-intro">
+            <h2 style="color: var(--primary-navy); margin-bottom: 1rem;">Welcome to Bridge the Divide!</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-dark);">
+                Test your understanding of the digital divide in AI literacy through real-world scenarios. 
+                Make choices that help bridge the gap and see how your decisions impact AI adoption and equity.
+            </p>
+        </div>
+
+        <div class="score-display">
+            <span>Score: <span id="score">0</span></span> | 
+            <span>Question <span id="current">1</span> of <span id="total">5</span></span>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress"></div>
+        </div>
+
+        <div class="game-board" id="gameBoard">
+            <!-- Scenarios will be loaded here by JavaScript -->
+        </div>
+
+        <div class="final-results" id="finalResults">
+            <div class="result-emoji" id="resultEmoji">🎉</div>
+            <div class="result-message" id="resultMessage">Great job!</div>
+            <div class="result-score" id="finalScore">You scored 5/5</div>
+            <p id="resultText" style="font-size: 1.1rem; line-height: 1.8; max-width: 600px; margin: 0 auto 1rem;">
+                You've demonstrated excellent understanding of AI literacy challenges and equity solutions!
+            </p>
+            <button class="restart-btn" onclick="restartGame()">Play Again</button>
+            <div style="margin-top: 2rem;">
+                <a href="index.html" style="color: var(--accent-teal); font-weight: 600;">← Back to Research Home</a>
+            </div>
+        </div>
+    </main>
+
+    <footer style="background: linear-gradient(135deg, #1e3a5f 0%, #1a7f8e 100%); color: white; padding: 1.5rem; text-align: center; margin-top: 2rem;">
+        <p style="margin-bottom: 0.5rem;">© 2025 April V. Sykes | SOC319 Research Project</p>
+        <p style="font-size: 0.9rem; opacity: 0.8;">Olympic College | Dr. Cohen | Fall 2025</p>
+    </footer>
+
+    <script>
+        const scenarios = [
+            {
+                id: 1,
+                situation: "Maria, a 58-year-old small business owner, wants to use AI tools to improve her marketing but feels overwhelmed. She's heard about ChatGPT but doesn't know where to start. What's the BEST first step to help bridge her digital divide?",
+                choices: [
+                    { text: "Tell her to watch YouTube tutorials and figure it out herself", correct: false, icon: "📺" },
+                    { text: "Sign her up for an expensive AI bootcamp", correct: false, icon: "💰" },
+                    { text: "Provide simple, hands-on training with practical examples relevant to her business", correct: true, icon: "✨" },
+                    { text: "Give her a manual to read about AI theory and machine learning", correct: false, icon: "📚" }
+                ],
+                correctFeedback: "Excellent! Practical, relevant training lowers barriers to entry. Research shows that contextualized learning experiences are most effective for adult learners crossing the digital divide.",
+                incorrectFeedback: "Not quite. While these approaches might work for some, the most effective bridge is hands-on, relevant training that meets learners where they are."
+            },
+            {
+                id: 2,
+                situation: "A community college wants to prepare students from diverse backgrounds for an AI-driven workforce. They have limited budget. Which investment would have the GREATEST equity impact?",
+                choices: [
+                    { text: "Buy the latest AI software licenses for advanced students only", correct: false, icon: "💻" },
+                    { text: "Create free, accessible AI literacy workshops open to all students with mentorship support", correct: true, icon: "🤝" },
+                    { text: "Focus only on computer science majors since they're most likely to use AI", correct: false, icon: "🎓" },
+                    { text: "Wait until they have more funding to implement anything", correct: false, icon: "⏳" }
+                ],
+                correctFeedback: "Perfect! Universal access with support structures addresses equity head-on. This approach recognizes that AI literacy is essential across disciplines, not just tech fields.",
+                incorrectFeedback: "Consider who gets left behind with this approach. True equity means creating opportunities accessible to all, not just those already positioned to succeed."
+            },
+            {
+                id: 3,
+                situation: "David is a factory worker whose job may be automated. He's skeptical about AI and worried about his future. How should his employer approach AI literacy training with him?",
+                choices: [
+                    { text: "Force mandatory training and threaten job loss if he doesn't comply", correct: false, icon: "⚠️" },
+                    { text: "Ignore his concerns and implement AI without his input", correct: false, icon: "🚫" },
+                    { text: "Acknowledge his concerns, show how AI can augment his work, and provide reskilling opportunities", correct: true, icon: "💡" },
+                    { text: "Assume he can't learn new technology and suggest early retirement", correct: false, icon: "👴" }
+                ],
+                correctFeedback: "Excellent insight! Addressing psychological barriers like fear and skepticism is crucial. Effective AI literacy includes emotional intelligence and demonstrates how humans and AI can work together.",
+                incorrectFeedback: "This approach might increase resistance and widen the divide. Successful transitions require empathy, clear communication, and genuine support."
+            },
+            {
+                id: 4,
+                situation: "A rural school district has limited internet access. Students are falling behind in AI literacy compared to urban peers. What's the most sustainable solution?",
+                choices: [
+                    { text: "Accept that rural students will always be behind and focus resources elsewhere", correct: false, icon: "😔" },
+                    { text: "Advocate for infrastructure investment while implementing offline AI literacy activities and partner with libraries", correct: true, icon: "🌟" },
+                    { text: "Tell students to move to cities if they want AI education", correct: false, icon: "🏙️" },
+                    { text: "Only teach traditional subjects since AI isn't accessible anyway", correct: false, icon: "📖" }
+                ],
+                correctFeedback: "Outstanding! This multi-pronged approach addresses infrastructure while providing immediate support. It recognizes that geography shouldn't determine access to critical 21st-century skills.",
+                incorrectFeedback: "This perpetuates inequality. The digital divide requires creative solutions that work within current constraints while pushing for systemic change."
+            },
+            {
+                id: 5,
+                situation: "An organization wants to measure if their AI literacy program is actually bridging divides. What metric matters MOST for equity?",
+                choices: [
+                    { text: "How many people completed the program", correct: false, icon: "📊" },
+                    { text: "How high-tech the curriculum is compared to competitors", correct: false, icon: "🚀" },
+                    { text: "Whether participants from underrepresented groups show increased confidence and actual AI tool usage", correct: true, icon: "📈" },
+                    { text: "How much revenue the program generates", correct: false, icon: "💵" }
+                ],
+                correctFeedback: "Brilliant! True equity is measured by outcomes, not just participation. Increased confidence and actual usage demonstrate genuine skill transfer and empowerment across demographic divides.",
+                incorrectFeedback: "While this metric has value, it doesn't capture whether the program actually reduces disparities. Focus on measurable behavior change and equity of outcomes."
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        let answered = false;
+
+        function loadQuestion() {
+            const scenario = scenarios[currentQuestion];
+            const gameBoard = document.getElementById('gameBoard');
+            
+            answered = false;
+            
+            gameBoard.innerHTML = `
+                <div class="scenario-card">
+                    <h3 style="color: var(--primary-navy); margin-bottom: 1rem;">Scenario ${scenario.id}</h3>
+                    <p class="scenario-text">${scenario.situation}</p>
+                    
+                    <div class="choices" id="choices">
+                        ${scenario.choices.map((choice, index) => `
+                            <button class="choice-btn" onclick="selectChoice(${index})">
+                                <span class="choice-icon">${choice.icon}</span>
+                                <span>${choice.text}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                    
+                    <div class="feedback" id="feedback"></div>
+                    <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next Question →</button>
+                </div>
+            `;
+            
+            updateProgress();
+        }
+
+        function selectChoice(index) {
+            if (answered) return;
+            
+            answered = true;
+            const scenario = scenarios[currentQuestion];
+            const choice = scenario.choices[index];
+            const choices = document.querySelectorAll('.choice-btn');
+            const feedback = document.getElementById('feedback');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            // Mark correct/incorrect
+            choices[index].classList.add(choice.correct ? 'correct' : 'incorrect');
+            
+            // Show correct answer if they got it wrong
+            if (!choice.correct) {
+                const correctIndex = scenario.choices.findIndex(c => c.correct);
+                choices[correctIndex].classList.add('correct');
+            }
+            
+            // Update score
+            if (choice.correct) {
+                score++;
+                document.getElementById('score').textContent = score;
+            }
+            
+            // Show feedback
+            feedback.className = 'feedback show ' + (choice.correct ? 'correct' : 'incorrect');
+            feedback.innerHTML = `
+                <strong>${choice.correct ? '✓ Correct!' : '✗ Not quite.'}</strong>
+                <p style="margin-top: 0.5rem;">${choice.correct ? scenario.correctFeedback : scenario.incorrectFeedback}</p>
+            `;
+            
+            // Disable all choices
+            choices.forEach(btn => btn.style.pointerEvents = 'none');
+            
+            // Show next button
+            nextBtn.classList.add('show');
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            
+            if (currentQuestion < scenarios.length) {
+                document.getElementById('current').textContent = currentQuestion + 1;
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / scenarios.length) * 100;
+            document.getElementById('progress').style.width = progress + '%';
+        }
+
+        function showResults() {
+            document.getElementById('gameBoard').style.display = 'none';
+            document.querySelector('.score-display').style.display = 'none';
+            document.querySelector('.progress-bar').style.display = 'none';
+            
+            const results = document.getElementById('finalResults');
+            const percentage = (score / scenarios.length) * 100;
+            
+            let emoji, message, text;
+            
+            if (percentage === 100) {
+                emoji = '🏆';
+                message = 'Perfect Score!';
+                text = "You've demonstrated exceptional understanding of AI literacy equity! You clearly grasp how to bridge the digital divide with empathy, practicality, and systemic thinking.";
+            } else if (percentage >= 80) {
+                emoji = '🌟';
+                message = 'Excellent Work!';
+                text = "You have strong understanding of AI literacy challenges and equity-focused solutions. Keep applying these insights to help bridge the divide!";
+            } else if (percentage >= 60) {
+                emoji = '👍';
+                message = 'Good Job!';
+                text = "You're developing solid understanding of digital equity issues. Consider reviewing the research to deepen your insights on effective interventions.";
+            } else {
+                emoji = '📚';
+                message = 'Keep Learning!';
+                text = "AI literacy and digital equity are complex topics. Explore the research pages to learn more about effective strategies for bridging the divide.";
+            }
+            
+            document.getElementById('resultEmoji').textContent = emoji;
+            document.getElementById('resultMessage').textContent = message;
+            document.getElementById('finalScore').textContent = `You scored ${score}/${scenarios.length}`;
+            document.getElementById('resultText').textContent = text;
+            
+            results.classList.add('show');
+        }
+
+        function restartGame() {
+            currentQuestion = 0;
+            score = 0;
+            answered = false;
+            
+            document.getElementById('score').textContent = '0';
+            document.getElementById('current').textContent = '1';
+            document.getElementById('gameBoard').style.display = 'block';
+            document.querySelector('.score-display').style.display = 'block';
+            document.querySelector('.progress-bar').style.display = 'block';
+            document.getElementById('finalResults').classList.remove('show');
+            
+            loadQuestion();
+        }
+
+        // Initialize game on page load
+        document.getElementById('total').textContent = scenarios.length;
+        loadQuestion();
+    </script>
+</body>
+</html>

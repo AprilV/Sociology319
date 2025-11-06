@@ -36,3 +36,7 @@ logs/
 # Draft files
 drafts/
 scratch/
+
+# Internal planning/audit documentation (not for professor)
+*.md
+!README.md
