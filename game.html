@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bridge the Divide - AI Literacy Game | SOC319</title>
+    <title>Bridge the Divide - AI LiteracyGame | SOC319</title>
     <link rel="stylesheet" href="css/styles.css">
     <style>
         .game-container {
@@ -210,13 +210,15 @@
     </style>
 </head>
 <body>
-    <header style="background: linear-gradient(135deg, #1e3a5f 0%, #1a7f8e 100%); color: white; padding: 1.5rem 2rem; text-align: center;">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header role="banner" style="background: linear-gradient(135deg, #1e3a5f 0%, #1a7f8e 100%); color: white; padding: 1.5rem 2rem; text-align: center;">
         <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem; font-weight: 600; color: #ffffff; text-shadow: 0 1px 3px rgba(0,0,0,0.2);">Bridge the Divide 🌉</h1>
-        <p style="font-size: 1.1rem; margin: 0.25rem 0;">An Interactive AI Literacy Game</p>
+        <p style="font-size: 1.1rem; margin: 0.25rem 0;">An Interactive AI LiteracyGame</p>
         <p style="font-size: 0.9rem; margin: 0.25rem 0; opacity: 0.9;">SOC319 - Digital Divide Research</p>
     </header>
 
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-brand">Digital Divide in AI Literacy</div>
             <ul class="nav-menu">
@@ -227,7 +229,7 @@
                 <li><a href="strategies.html">Strategies</a></li>
                 <li><a href="role.html">Reflexivity</a></li>
                 <li><a href="references.html">References</a></li>
-                <li><a href="game.html" class="active">🎮 Game</a></li>
+                <li><a href="game.html" class="active">🎮Game</a></li>
                 <li><a href="about.html">About Me</a></li>
             </ul>
         </div>
@@ -269,7 +271,7 @@
         </div>
     </main>
 
-    <footer style="background: linear-gradient(135deg, #1e3a5f 0%, #1a7f8e 100%); color: white; padding: 1.5rem; text-align: center; margin-top: 2rem;">
+    <footer role="contentinfo" style="background: linear-gradient(135deg, #1e3a5f 0%, #1a7f8e 100%); color: white; padding: 1.5rem; text-align: center; margin-top: 2rem;">
         <p style="margin-bottom: 0.5rem;">© 2025 April V. Sykes | SOC319 Research Project</p>
         <p style="font-size: 0.9rem; opacity: 0.8;">Olympic College | Dr. Cohen | Fall 2025</p>
     </footer>
@@ -344,11 +346,11 @@
 
         function loadQuestion() {
             const scenario = scenarios[currentQuestion];
-            const gameBoard = document.getElementById('gameBoard');
+            constGameBoard = document.getElementById('gameBoard');
             
             answered = false;
             
-            gameBoard.innerHTML = `
+           GameBoard.innerHTML = `
                 <div class="scenario-card">
                     <h3 style="color: var(--primary-navy); margin-bottom: 1rem;">Scenario ${scenario.id}</h3>
                     <p class="scenario-text">${scenario.situation}</p>
@@ -476,7 +478,7 @@
             loadQuestion();
         }
 
-        // Initialize game on page load
+        // InitializeGame on page load
         document.getElementById('total').textContent = scenarios.length;
         loadQuestion();
     </script>

@@ -7,13 +7,15 @@
     <link rel='stylesheet' href='css/styles.css'>
 </head>
 <body>
-    <header style='background: linear-gradient(135deg, #1e3a5f 0%, #1a7f8e 100%); color: white; padding: 1.5rem 2rem; text-align: center;'>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header role="banner" style='background: linear-gradient(135deg, #1e3a5f 0%, #1a7f8e 100%); color: white; padding: 1.5rem 2rem; text-align: center;'>
         <h1 style='font-size: 2.2rem; margin-bottom: 0.5rem; font-weight: 600; color: #ffffff; text-shadow: 0 1px 3px rgba(0,0,0,0.2);'>April V. Sykes</h1>
         <p style='font-size: 1.1rem; margin: 0.25rem 0;'>SOC319 - Social Issues & Technology</p>
         <p style='font-size: 1rem; margin: 0.25rem 0;'>Dr. Cohen | Olympic College | Fall 2025</p>
     </header>
 
-    <nav class='navbar'>
+    <nav class='navbar' role="navigation" aria-label="Main navigation">
         <div class='nav-container'>
             <div class='nav-brand'>Digital Divide in AI Literacy</div>
             <ul class='nav-menu'>
@@ -24,13 +26,13 @@
                 <li><a href='strategies.html'>Strategies</a></li>
                 <li><a href='role.html'>Reflexivity</a></li>
                 <li><a href='references.html'>References</a></li>
-                <li><a href='game.html'>🎮 Game</a></li>
+                <li><a href='game.html'>🎮Game</a></li>
                 <li><a href='about.html'>About Me</a></li>
             </ul>
         </div>
     </nav>
 
-    <main class='container' style='padding: 2rem 2rem; max-width: 1000px; margin: 0 auto;'>
+    <main id="main-content" role="main" class='container' style='padding: 2rem 2rem; max-width: 1000px; margin: 0 auto;'>
         <h1 style='color: #1e3a5f; margin-bottom: 0.5rem; font-size: 2.5rem;'>Case Study: Training an AI Partner</h1>
         <p style='color: #666; font-size: 1.1rem; font-style: italic; margin-bottom: 1.5rem;'>
             What It Actually Takes to Collaborate with AI: The Hidden Work Behind the H.C. Lombardo App
@@ -222,7 +224,7 @@
     </main>
 
     <!-- Footer -->
-    <footer style='background: linear-gradient(135deg, #1e3a5f 0%, #1a7f8e 100%); color: white; padding: 2rem; text-align: center; margin-top: 3rem;'>
+    <footer role="contentinfo" style='background: linear-gradient(135deg, #1e3a5f 0%, #1a7f8e 100%); color: white; padding: 2rem; text-align: center; margin-top: 3rem;'>
         <p style='margin: 0; font-size: 1rem;'>© 2025 April V. Sykes | Developer & Researcher</p>
         <p style='margin: 0.5rem 0 0 0; font-size: 0.9rem; opacity: 0.9;'>SOC319 - Digital Divide in AI Literacy</p>
     </footer>
