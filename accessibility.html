@@ -180,7 +180,7 @@
         <div class="inclusion-statement">
             <h2>♿ Bridging the Digital Divide Means Everyone</h2>
             <p>
-                This research examines how 66% of Americans are excluded from AI literacy. People with disabilities face even greater barriers in accessing technology. These settings give you control over how you experience this site, because <strong>accessibility isn't optional—it's essential equity.</strong>
+                This research examines how 66% of Americans are excluded from AI literacy. People with disabilities face even greater barriers in accessing technology. These settings give you control over how you experience this site, because <strong style="color: #ffeb3b;">accessibility isn't optional—it's essential equity.</strong>
             </p>
         </div>
 
@@ -302,7 +302,7 @@
         });
 
         // Font size controls
-        let fontSize = parseInt(localStorage.getItem('fontSize')) || 100;
+        let fontSize = parseInt(localStorage.getItem('accessibility-font-size')) || 100;
         
         document.getElementById('increaseFont').addEventListener('click', function() {
             if (fontSize < 150) {
@@ -326,17 +326,17 @@
         function applyFontSize() {
             document.documentElement.style.fontSize = fontSize + '%';
             document.getElementById('currentSize').textContent = fontSize + '%';
-            localStorage.setItem('fontSize', fontSize);
+            localStorage.setItem('accessibility-font-size', fontSize);
         }
 
         // High Contrast Mode
         document.getElementById('highContrast').addEventListener('change', function() {
             if (this.checked) {
                 document.body.classList.add('high-contrast');
-                localStorage.setItem('highContrast', 'true');
+                localStorage.setItem('accessibility-high-contrast', 'true');
             } else {
                 document.body.classList.remove('high-contrast');
-                localStorage.setItem('highContrast', 'false');
+                localStorage.setItem('accessibility-high-contrast', 'false');
             }
         });
 
@@ -344,10 +344,10 @@
         document.getElementById('reduceMotion').addEventListener('change', function() {
             if (this.checked) {
                 document.body.classList.add('reduce-motion');
-                localStorage.setItem('reduceMotion', 'true');
+                localStorage.setItem('accessibility-reduce-motion', 'true');
             } else {
                 document.body.classList.remove('reduce-motion');
-                localStorage.setItem('reduceMotion', 'false');
+                localStorage.setItem('accessibility-reduce-motion', 'false');
             }
         });
 
@@ -355,10 +355,10 @@
         document.getElementById('dyslexiaFont').addEventListener('change', function() {
             if (this.checked) {
                 document.body.classList.add('dyslexia-font');
-                localStorage.setItem('dyslexiaFont', 'true');
+                localStorage.setItem('accessibility-dyslexia-font', 'true');
             } else {
                 document.body.classList.remove('dyslexia-font');
-                localStorage.setItem('dyslexiaFont', 'false');
+                localStorage.setItem('accessibility-dyslexia-font', 'false');
             }
         });
 
@@ -366,10 +366,10 @@
         document.getElementById('enhancedFocus').addEventListener('change', function() {
             if (this.checked) {
                 document.body.classList.add('enhanced-focus');
-                localStorage.setItem('enhancedFocus', 'true');
+                localStorage.setItem('accessibility-enhanced-focus', 'true');
             } else {
                 document.body.classList.remove('enhanced-focus');
-                localStorage.setItem('enhancedFocus', 'false');
+                localStorage.setItem('accessibility-enhanced-focus', 'false');
             }
         });
 
@@ -377,17 +377,24 @@
         document.getElementById('linkUnderlines').addEventListener('change', function() {
             if (this.checked) {
                 document.body.classList.add('link-underlines');
-                localStorage.setItem('linkUnderlines', 'true');
+                localStorage.setItem('accessibility-link-underlines', 'true');
             } else {
                 document.body.classList.remove('link-underlines');
-                localStorage.setItem('linkUnderlines', 'false');
+                localStorage.setItem('accessibility-link-underlines', 'false');
             }
         });
 
         // Reset All
         document.getElementById('resetAll').addEventListener('click', function() {
             if (confirm('Reset all accessibility settings to default?')) {
-                localStorage.clear();
+                // Clear all accessibility settings
+                localStorage.removeItem('accessibility-font-size');
+                localStorage.removeItem('accessibility-high-contrast');
+                localStorage.removeItem('accessibility-reduce-motion');
+                localStorage.removeItem('accessibility-dyslexia-font');
+                localStorage.removeItem('accessibility-enhanced-focus');
+                localStorage.removeItem('accessibility-link-underlines');
+                
                 fontSize = 100;
                 document.getElementById('highContrast').checked = false;
                 document.getElementById('reduceMotion').checked = false;
@@ -400,34 +407,44 @@
 
         // Load settings from localStorage
         function loadSettings() {
-            fontSize = parseInt(localStorage.getItem('fontSize')) || 100;
+            fontSize = parseInt(localStorage.getItem('accessibility-font-size')) || 100;
             document.getElementById('currentSize').textContent = fontSize + '%';
             
-            document.getElementById('highContrast').checked = localStorage.getItem('highContrast') === 'true';
-            document.getElementById('reduceMotion').checked = localStorage.getItem('reduceMotion') === 'true';
-            document.getElementById('dyslexiaFont').checked = localStorage.getItem('dyslexiaFont') === 'true';
-            document.getElementById('enhancedFocus').checked = localStorage.getItem('enhancedFocus') === 'true';
-            document.getElementById('linkUnderlines').checked = localStorage.getItem('linkUnderlines') === 'true';
+            document.getElementById('highContrast').checked = localStorage.getItem('accessibility-high-contrast') === 'true';
+            document.getElementById('reduceMotion').checked = localStorage.getItem('accessibility-reduce-motion') === 'true';
+            document.getElementById('dyslexiaFont').checked = localStorage.getItem('accessibility-dyslexia-font') === 'true';
+            document.getElementById('enhancedFocus').checked = localStorage.getItem('accessibility-enhanced-focus') === 'true';
+            document.getElementById('linkUnderlines').checked = localStorage.getItem('accessibility-link-underlines') === 'true';
         }
 
         // Apply all settings
         function applySettings() {
             applyFontSize();
             
-            if (localStorage.getItem('highContrast') === 'true') {
+            if (localStorage.getItem('accessibility-high-contrast') === 'true') {
                 document.body.classList.add('high-contrast');
+            } else {
+                document.body.classList.remove('high-contrast');
             }
-            if (localStorage.getItem('reduceMotion') === 'true') {
+            if (localStorage.getItem('accessibility-reduce-motion') === 'true') {
                 document.body.classList.add('reduce-motion');
+            } else {
+                document.body.classList.remove('reduce-motion');
             }
-            if (localStorage.getItem('dyslexiaFont') === 'true') {
+            if (localStorage.getItem('accessibility-dyslexia-font') === 'true') {
                 document.body.classList.add('dyslexia-font');
+            } else {
+                document.body.classList.remove('dyslexia-font');
             }
-            if (localStorage.getItem('enhancedFocus') === 'true') {
+            if (localStorage.getItem('accessibility-enhanced-focus') === 'true') {
                 document.body.classList.add('enhanced-focus');
+            } else {
+                document.body.classList.remove('enhanced-focus');
             }
-            if (localStorage.getItem('linkUnderlines') === 'true') {
+            if (localStorage.getItem('accessibility-link-underlines') === 'true') {
                 document.body.classList.add('link-underlines');
+            } else {
+                document.body.classList.remove('link-underlines');
             }
         }
     </script>

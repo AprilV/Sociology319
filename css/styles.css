@@ -250,6 +250,73 @@ strong {
     }
 }
 
+/* ============================================
+   FLOATING ACCESSIBILITY BUTTON
+   ============================================ */
+
+.accessibility-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999;
+    background: linear-gradient(135deg, #1a7f8e 0%, #1e3a5f 100%);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3), 0 0 20px rgba(26, 127, 142, 0.5);
+    transition: all 0.3s ease;
+    border: 3px solid rgba(255,255,255,0.3);
+    animation: subtleGlow 3s ease-in-out infinite;
+}
+
+.accessibility-float:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.4), 0 0 30px rgba(26, 127, 142, 0.7);
+    background: linear-gradient(135deg, #ffeb3b 0%, #ffd700 100%);
+    color: #1e3a5f;
+    border-color: #1a7f8e;
+    text-decoration: none;
+}
+
+.accessibility-float:focus {
+    outline: 3px solid #ffeb3b;
+    outline-offset: 3px;
+}
+
+/* Tooltip for accessibility button */
+.accessibility-float::before {
+    content: 'Accessibility Settings';
+    position: absolute;
+    right: 70px;
+    background: #1e3a5f;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    font-family: 'Helvetica Neue', sans-serif;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.accessibility-float:hover::before {
+    opacity: 1;
+}
+
+/* Hide accessibility nav link */
+.nav-menu li a[href='accessibility.html'] {
+    display: none;
+}
+
+
 
 /* Main Container */
 .container {
@@ -1325,6 +1392,7 @@ body.high-contrast {
     --text-light: #000000;
     --bg-white: #ffffff;
     background: #ffffff !important;
+    color: #000000 !important;
 }
 
 body.high-contrast * {
@@ -1344,17 +1412,74 @@ body.high-contrast .hero-banner {
     color: #ffffff !important;
 }
 
+body.high-contrast .hero-banner *,
+body.high-contrast header *,
+body.high-contrast footer * {
+    color: #ffffff !important;
+}
+
 body.high-contrast .nav-menu li a {
     background: #000000 !important;
     color: #ffffff !important;
     border-color: #ffffff !important;
 }
 
+/* White background sections stay white with black text */
 body.high-contrast section,
+body.high-contrast div[style*="background: white"],
 body.high-contrast .setting-card {
     background: #ffffff !important;
     color: #000000 !important;
     border: 2px solid #000000 !important;
+}
+
+body.high-contrast div[style*="background: white"] *,
+body.high-contrast div[style*="background: white"] p,
+body.high-contrast div[style*="background: white"] h2,
+body.high-contrast div[style*="background: white"] h3 {
+    color: #000000 !important;
+}
+
+/* Gradient backgrounds - black background with white text */
+body.high-contrast section[style*="gradient"],
+body.high-contrast div[style*="gradient"] {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+
+body.high-contrast section[style*="gradient"] *,
+body.high-contrast div[style*="gradient"] *,
+body.high-contrast div[style*="gradient"] p,
+body.high-contrast div[style*="gradient"] h3,
+body.high-contrast div[style*="gradient"] strong,
+body.high-contrast div[style*="gradient"] div,
+body.high-contrast div[style*="linear-gradient"] *,
+body.high-contrast div[style*="linear-gradient"] p,
+body.high-contrast div[style*="linear-gradient"] h3 {
+    color: #ffffff !important;
+}
+
+/* Default text colors */
+body.high-contrast p,
+body.high-contrast h1,
+body.high-contrast h2,
+body.high-contrast h3,
+body.high-contrast h4,
+body.high-contrast h5,
+body.high-contrast h6,
+body.high-contrast li,
+body.high-contrast span {
+    color: #000000 !important;
+}
+
+/* High contrast for info boxes with borders */
+body.high-contrast div[style*="border-left"][style*="background"] {
+    background: #000000 !important;
+    border-left-color: #ffffff !important;
+}
+
+body.high-contrast div[style*="border-left"][style*="background"] * {
+    color: #ffffff !important;
 }
 
 /* Reduce Motion Override */

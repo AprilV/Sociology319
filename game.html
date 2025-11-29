@@ -211,6 +211,7 @@
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="accessibility.html" class="accessibility-float" aria-label="Accessibility Settings">♿</a>
     
     <header role="banner" style="background: linear-gradient(135deg, #1e3a5f 0%, #1a7f8e 100%); color: white; padding: 1.5rem 2rem; text-align: center;">
         <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem; font-weight: 600; color: #ffffff; text-shadow: 0 1px 3px rgba(0,0,0,0.2);">Bridge the Divide 🌉</h1>
@@ -347,11 +348,11 @@
 
         function loadQuestion() {
             const scenario = scenarios[currentQuestion];
-            constGameBoard = document.getElementById('gameBoard');
+            const gameBoard = document.getElementById('gameBoard');
             
             answered = false;
             
-           GameBoard.innerHTML = `
+            gameBoard.innerHTML = `
                 <div class="scenario-card">
                     <h3 style="color: var(--primary-navy); margin-bottom: 1rem;">Scenario ${scenario.id}</h3>
                     <p class="scenario-text">${scenario.situation}</p>
