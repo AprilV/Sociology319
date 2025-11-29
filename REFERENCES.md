@@ -36,7 +36,7 @@
 ---
 
 ### 4. World Economic Forum - Future of Jobs
-**World Economic Forum.** (2024). *Future of Jobs Report 2024.* https://www.weforum.org/publications/the-future-of-jobs-report-2024/
+**World Economic Forum.** (2024). *Future of Jobs Report 2025.* https://www.weforum.org/publications/the-future-of-jobs-report-2025/
 
 **Key Prediction:** AI skills will be essential for most jobs by 2030  
 **Why This Matters:** Those without AI literacy face economic disadvantage
