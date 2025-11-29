@@ -37,8 +37,90 @@
     </nav>
 
     <main id="main-content" role="main" class="container" style="padding: 0; margin-top: 2rem;">
-        <!-- Hero Banner - Compact with Big Stat -->
-        <section class="hero-banner" style="height: 300px; margin-bottom: 0 !important; padding-top: 3rem;">
+        <!-- Hero Banner with 3D Graphic -->
+        <section class="hero-banner" style="height: 300px; margin-bottom: 0 !important; padding-top: 3rem; position: relative; overflow: hidden;">
+            
+            <!-- 3D Digital Divide Visualization (Upper Left) -->
+            <div style="position: absolute; top: 20px; left: 30px; z-index: 10;">
+                <svg width="200" height="180" viewBox="0 0 200 180" style="filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));">
+                    <!-- Background glow -->
+                    <defs>
+                        <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4caf50;stop-opacity:0.4" />
+                            <stop offset="100%" style="stop-color:#1a7f8e;stop-opacity:0.1" />
+                        </linearGradient>
+                        <linearGradient id="divideGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#f44336;stop-opacity:0.9" />
+                            <stop offset="100%" style="stop-color:#c62828;stop-opacity:0.7" />
+                        </linearGradient>
+                        <linearGradient id="leftSide" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4caf50;stop-opacity:0.9" />
+                            <stop offset="100%" style="stop-color:#2e7d32;stop-opacity:0.8" />
+                        </linearGradient>
+                        <linearGradient id="rightSide" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ff9800;stop-opacity:0.9" />
+                            <stop offset="100%" style="stop-color:#e65100;stop-opacity:0.8" />
+                        </linearGradient>
+                        <!-- Pulse animation -->
+                        <animate id="pulse" attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+                    </defs>
+                    
+                    <!-- Outer glow circle -->
+                    <circle cx="100" cy="90" r="85" fill="url(#glowGrad)" opacity="0.5">
+                        <animate attributeName="r" values="85;90;85" dur="4s" repeatCount="indefinite"/>
+                    </circle>
+                    
+                    <!-- 3D Cube representing the divide - LEFT SIDE (Have AI Skills - 34%) -->
+                    <g transform="translate(40, 60)">
+                        <!-- Top face -->
+                        <path d="M 0,0 L 40,15 L 40,55 L 0,40 Z" fill="url(#leftSide)" stroke="#2e7d32" stroke-width="1.5" opacity="0.95">
+                            <animate attributeName="opacity" values="0.95;1;0.95" dur="2s" repeatCount="indefinite"/>
+                        </path>
+                        <!-- Right face -->
+                        <path d="M 40,15 L 40,55 L 0,70 L 0,30 Z" fill="url(#leftSide)" stroke="#1b5e20" stroke-width="1.5" opacity="0.85"/>
+                        <!-- Front face -->
+                        <path d="M 0,30 L 40,15 L 40,55 L 0,70 Z" fill="url(#leftSide)" stroke="#1b5e20" stroke-width="1.5" opacity="0.9"/>
+                        <!-- Label -->
+                        <text x="15" y="50" fill="white" font-size="14" font-weight="bold" text-anchor="middle">34%</text>
+                    </g>
+                    
+                    <!-- The DIVIDE - Red barrier -->
+                    <rect x="95" y="40" width="10" height="100" fill="url(#divideGrad)" opacity="0.9" rx="2">
+                        <animate attributeName="height" values="100;105;100" dur="2.5s" repeatCount="indefinite"/>
+                    </rect>
+                    
+                    <!-- 3D Cube representing the divide - RIGHT SIDE (No AI Skills - 66%) -->
+                    <g transform="translate(120, 70)">
+                        <!-- Top face (larger) -->
+                        <path d="M 0,0 L 60,20 L 60,70 L 0,50 Z" fill="url(#rightSide)" stroke="#e65100" stroke-width="1.5" opacity="0.95">
+                            <animate attributeName="opacity" values="0.95;1;0.95" dur="2.5s" repeatCount="indefinite"/>
+                        </path>
+                        <!-- Right face -->
+                        <path d="M 60,20 L 60,70 L 0,90 L 0,40 Z" fill="url(#rightSide)" stroke="#bf360c" stroke-width="1.5" opacity="0.85"/>
+                        <!-- Front face -->
+                        <path d="M 0,40 L 60,20 L 60,70 L 0,90 Z" fill="url(#rightSide)" stroke="#bf360c" stroke-width="1.5" opacity="0.9"/>
+                        <!-- Label -->
+                        <text x="30" y="60" fill="white" font-size="18" font-weight="bold" text-anchor="middle">66%</text>
+                    </g>
+                    
+                    <!-- Connecting dots/particles suggesting movement -->
+                    <circle cx="50" cy="100" r="3" fill="#ffeb3b" opacity="0.8">
+                        <animate attributeName="cx" values="50;95;50" dur="4s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="60" cy="110" r="2" fill="#ffeb3b" opacity="0.6">
+                        <animate attributeName="cx" values="60;95;60" dur="5s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="70" cy="105" r="2.5" fill="#ffeb3b" opacity="0.7">
+                        <animate attributeName="cx" values="70;95;70" dur="4.5s" repeatCount="indefinite"/>
+                    </circle>
+                </svg>
+                
+                <!-- Label beneath graphic -->
+                <div style="margin-top: 5px; text-align: center;">
+                    <span style="font-size: 0.7rem; color: white; text-shadow: 0 1px 3px rgba(0,0,0,0.5); font-weight: 600; letter-spacing: 0.5px;">THE DIGITAL DIVIDE</span>
+                </div>
+            </div>
+            
             <div class="hero-overlay" style="padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: center; flex-direction: column;">
                 <h2 class="hero-title" style="font-size: 2.2rem; margin-bottom: 0.5rem; margin-top: 0;">The AI Literacy Divide</h2>
                 <div style="margin: 0.75rem 0;">
@@ -130,7 +212,7 @@
                 <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 1.5rem;">
                     <h2 style="color: #1e3a5f; margin-bottom: 1rem; font-size: 1.8rem;">📖 Research Overview</h2>
                     <p style="font-size: 1.05rem; line-height: 1.6; color: #333; margin-bottom: 1rem;">
-                        This research examines the <strong style="color: #1a7f8e;">digital divide in AI literacy</strong>. This is the gap between those who can effectively use artificial intelligence tools and those who cannot or will not adopt them.
+                        This research examines the <strong style="color: #1a7f8e;">digital divide in AI literacy</strong>—the growing gap in AI skills, confidence, and access across American society.
                     </p>
                     
                     <!-- The Problem Box -->
