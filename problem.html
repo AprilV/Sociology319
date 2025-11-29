@@ -20,7 +20,7 @@
         <div class='nav-container'>
             <div class='nav-brand'>Digital Divide in AI Literacy</div>
             <ul class='nav-menu'>
-                <li><a href='index.html'>Home</a></li>
+                <li><a href='index.html'>Introduction</a></li>
                 <li><a href='problem.html' class='active'>Context</a></li>
                 <li><a href='methodology.html'>Methodology</a></li>
                 <li><a href='case-study.html'>Case Study</a></li>
@@ -28,7 +28,6 @@
                 <li><a href='role.html'>Reflexivity</a></li>
                 <li><a href='references.html'>References</a></li>
                 <li><a href='game.html'>Game</a></li>
-                <li><a href='about.html'>About Me</a></li>
                 <li><a href='accessibility.html'>♿ Accessibility</a></li>
             </ul>
         </div>
@@ -70,28 +69,41 @@
             <div style='background: linear-gradient(135deg, rgba(244,67,54,0.05) 0%, rgba(244,67,54,0.02) 100%); padding: 2rem; border-radius: 8px; margin-bottom: 2rem;'>
                 <h3 style='color: #c62828; margin-bottom: 1rem; text-align: center;'>⚠️ The Adoption Funnel: Massive Drop-Off</h3>
                 
-                <!-- Visual Funnel -->
+                <!-- Visual Funnel with animations -->
                 <div style='max-width: 600px; margin: 0 auto 1.5rem auto;'>
                     <!-- Stage 1: Access -->
-                    <div style='background: linear-gradient(135deg, #4caf50 0%, #45a049 100%); padding: 1rem; border-radius: 8px 8px 0 0; text-align: center; color: white;'>
+                    <div style='background: linear-gradient(135deg, #4caf50 0%, #45a049 100%); padding: 1rem; border-radius: 8px 8px 0 0; text-align: center; color: white; animation: dropDown 0.6s ease-out; box-shadow: 0 4px 8px rgba(0,0,0,0.2);'>
                         <div style='font-size: 2rem; font-weight: bold;'>100%</div>
                         <div style='font-size: 1rem;'>Have Access to ChatGPT (Free)</div>
                     </div>
                     
                     <!-- Stage 2: Tried It -->
-                    <div style='background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); padding: 1rem; margin: 0 15%; text-align: center; color: white;'>
+                    <div style='background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); padding: 1rem; margin: 0 15%; text-align: center; color: white; animation: dropDown 0.8s ease-out; box-shadow: 0 4px 8px rgba(0,0,0,0.2);'>
                         <div style='font-size: 2rem; font-weight: bold;'>34%</div>
                         <div style='font-size: 1rem;'>Have Ever Tried It</div>
                         <div style='font-size: 0.85rem; opacity: 0.9; margin-top: 0.25rem;'>(Pew Research, 2025)</div>
                     </div>
                     
                     <!-- Stage 3: Regular Users -->
-                    <div style='background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%); padding: 1rem; margin: 0 30%; border-radius: 0 0 8px 8px; text-align: center; color: white;'>
+                    <div style='background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%); padding: 1rem; margin: 0 30%; border-radius: 0 0 8px 8px; text-align: center; color: white; animation: dropDown 1s ease-out; box-shadow: 0 4px 8px rgba(0,0,0,0.2);'>
                         <div style='font-size: 2rem; font-weight: bold;'>~18%</div>
                         <div style='font-size: 1rem;'>Use It Regularly</div>
                         <div style='font-size: 0.85rem; opacity: 0.9; margin-top: 0.25rem;'>(Estimated from usage patterns)</div>
                     </div>
                 </div>
+                
+                <style>
+                    @keyframes dropDown {
+                        from {
+                            opacity: 0;
+                            transform: translateY(-30px) scale(0.9);
+                        }
+                        to {
+                            opacity: 1;
+                            transform: translateY(0) scale(1);
+                        }
+                    }
+                </style>
                 
                 <p style='font-size: 1.05rem; line-height: 1.7; color: #333; text-align: center; font-weight: bold;'>
                     💔 66% Drop-Off: Two-thirds never even try despite free access
@@ -114,7 +126,7 @@
                             <span style='font-weight: bold; color: #4caf50; font-size: 1.3rem;'>52%</span>
                         </div>
                         <div style='background: #e0e0e0; border-radius: 20px; height: 30px; overflow: hidden;'>
-                            <div style='background: linear-gradient(90deg, #4caf50 0%, #66bb6a 100%); width: 52%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;'>52%</div>
+                            <div style='background: linear-gradient(90deg, #4caf50 0%, #66bb6a 100%); width: 52%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; animation: fillBar 1.5s ease-out;'>52%</div>
                         </div>
                     </div>
                     
@@ -125,9 +137,27 @@
                             <span style='font-weight: bold; color: #ff9800; font-size: 1.3rem;'>37%</span>
                         </div>
                         <div style='background: #e0e0e0; border-radius: 20px; height: 30px; overflow: hidden;'>
-                            <div style='background: linear-gradient(90deg, #ff9800 0%, #ffa726 100%); width: 37%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;'>37%</div>
+                            <div style='background: linear-gradient(90deg, #ff9800 0%, #ffa726 100%); width: 37%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; animation: fillBar 1.7s ease-out;'>37%</div>
                         </div>
                     </div>
+                    
+                <style>
+                    @keyframes fillBar {
+                        from {
+                            width: 0%;
+                            opacity: 0.5;
+                        }
+                        to {
+                            opacity: 1;
+                        }
+                    }
+                    
+                    /* When reduce-motion is active, bars should show at full width immediately */
+                    body.reduce-motion [style*="fillBar"] {
+                        animation: none !important;
+                        opacity: 1 !important;
+                    }
+                </style>
                     
                     <!-- Some College Bar -->
                     <div style='margin-bottom: 1.5rem;'>
@@ -136,7 +166,7 @@
                             <span style='font-weight: bold; color: #ff5722; font-size: 1.3rem;'>28%</span>
                         </div>
                         <div style='background: #e0e0e0; border-radius: 20px; height: 30px; overflow: hidden;'>
-                            <div style='background: linear-gradient(90deg, #ff5722 0%, #ff7043 100%); width: 28%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;'>28%</div>
+                            <div style='background: linear-gradient(90deg, #ff5722 0%, #ff7043 100%); width: 28%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; animation: fillBar 1.9s ease-out;'>28%</div>
                         </div>
                     </div>
                     
@@ -147,7 +177,7 @@
                             <span style='font-weight: bold; color: #f44336; font-size: 1.3rem;'>18%</span>
                         </div>
                         <div style='background: #e0e0e0; border-radius: 20px; height: 30px; overflow: hidden;'>
-                            <div style='background: linear-gradient(90deg, #f44336 0%, #e57373 100%); width: 18%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;'>18%</div>
+                            <div style='background: linear-gradient(90deg, #f44336 0%, #e57373 100%); width: 18%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; animation: fillBar 2.1s ease-out;'>18%</div>
                         </div>
                     </div>
                     
@@ -195,20 +225,27 @@
             <!-- Organizational Paradox -->
             <div style='background: linear-gradient(135deg, rgba(156,39,176,0.1) 0%, rgba(156,39,176,0.05) 100%); padding: 1.5rem; border-left: 4px solid #9c27b0; border-radius: 4px; margin-bottom: 2rem;'>
                 <h3 style='color: #7b1fa2; margin-bottom: 1rem;'>🏢 The Organizational Paradox</h3>
-                <div style='display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 1rem;'>
+                
+                <div style='display: flex; justify-content: center; align-items: flex-end; gap: 3rem; margin-bottom: 1.5rem;'>
+                    <!-- 88% Adoption - Arrow UP -->
                     <div style='text-align: center;'>
-                        <div style='font-size: 2.5rem; font-weight: bold; color: #9c27b0;'>88%</div>
-                        <div style='font-size: 1rem; color: #333;'>of organizations use AI</div>
+                        <div style='font-size: 3rem; color: #4caf50;'>↑</div>
+                        <div style='font-size: 2.5rem; font-weight: bold; color: #4caf50;'>88%</div>
+                        <div style='font-size: 0.9rem; color: #333; margin-top: 0.5rem;'>Adopt AI</div>
                     </div>
+                    
+                    <!-- 6% Value - Arrow DOWN -->
                     <div style='text-align: center;'>
-                        <div style='font-size: 2.5rem; font-weight: bold; color: #9c27b0;'>6%</div>
-                        <div style='font-size: 1rem; color: #333;'>see real material value</div>
+                        <div style='font-size: 3rem; color: #f44336;'>↓</div>
+                        <div style='font-size: 2.5rem; font-weight: bold; color: #f44336;'>6%</div>
+                        <div style='font-size: 0.9rem; color: #333; margin-top: 0.5rem;'>Get Value</div>
                     </div>
                 </div>
-                <p style='font-size: 1rem; color: #333; text-align: center; margin: 0;'>
-                    Organizations are rushing to adopt AI, but few employees know how to use it effectively. The divide isn't just about access. It's about <strong>skills and training</strong>.
+                
+                <p style='font-size: 1.05rem; color: #333; text-align: center; line-height: 1.7; margin: 0;'>
+                    <strong>88% of companies have adopted AI, but only 6% report seeing meaningful business results.</strong> Why the massive gap? Most employees don't know how to use AI effectively. Companies are buying the technology, but not investing in the <strong>skills and training</strong> needed to make it work.
                 </p>
-                <p style='font-size: 0.9rem; color: #666; font-style: italic; text-align: center; margin-top: 0.5rem;'>
+                <p style='font-size: 0.9rem; color: #666; font-style: italic; text-align: center; margin-top: 0.75rem;'>
                     (McKinsey & Company, 2024)
                 </p>
             </div>

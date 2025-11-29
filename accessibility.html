@@ -160,7 +160,7 @@
         <div class="nav-container">
             <div class="nav-brand">Digital Divide in AI Literacy</div>
             <ul class='nav-menu'>
-                <li><a href='index.html'>Home</a></li>
+                <li><a href='index.html'>Introduction</a></li>
                 <li><a href='problem.html'>Context</a></li>
                 <li><a href='methodology.html'>Methodology</a></li>
                 <li><a href='case-study.html'>Case Study</a></li>
@@ -168,7 +168,6 @@
                 <li><a href='role.html'>Reflexivity</a></li>
                 <li><a href='references.html'>References</a></li>
                 <li><a href='game.html'>Game</a></li>
-                <li><a href='about.html'>About Me</a></li>
                 <li><a href='accessibility.html' class='active'>♿ Accessibility</a></li>
             </ul>
         </div>
@@ -298,158 +297,157 @@
     </footer>
 
     <script>
-        // Load saved settings on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            loadSettings();
-            applySettings();
-        });
+        // Wait for DOM to be fully loaded
+        (function() {
+            'use strict';
+            
+            // Load saved settings on page load
+            document.addEventListener('DOMContentLoaded', function() {
+                loadSettings();
+                initializeEventListeners();
+            });
 
-        // Font size controls
-        let fontSize = parseInt(localStorage.getItem('accessibility-font-size')) || 100;
-        
-        document.getElementById('increaseFont').addEventListener('click', function() {
-            if (fontSize < 150) {
-                fontSize += 10;
-                applyFontSize();
-            }
-        });
-        
-        document.getElementById('decreaseFont').addEventListener('click', function() {
-            if (fontSize > 70) {
-                fontSize -= 10;
-                applyFontSize();
-            }
-        });
-        
-        document.getElementById('resetFont').addEventListener('click', function() {
-            fontSize = 100;
-            applyFontSize();
-        });
-        
-        function applyFontSize() {
-            document.documentElement.style.fontSize = fontSize + '%';
-            document.getElementById('currentSize').textContent = fontSize + '%';
-            localStorage.setItem('accessibility-font-size', fontSize);
-        }
-
-        // High Contrast Mode
-        document.getElementById('highContrast').addEventListener('change', function() {
-            if (this.checked) {
-                document.body.classList.add('high-contrast');
-                localStorage.setItem('accessibility-high-contrast', 'true');
-            } else {
-                document.body.classList.remove('high-contrast');
-                localStorage.setItem('accessibility-high-contrast', 'false');
-            }
-        });
-
-        // Reduce Motion
-        document.getElementById('reduceMotion').addEventListener('change', function() {
-            if (this.checked) {
-                document.body.classList.add('reduce-motion');
-                localStorage.setItem('accessibility-reduce-motion', 'true');
-            } else {
-                document.body.classList.remove('reduce-motion');
-                localStorage.setItem('accessibility-reduce-motion', 'false');
-            }
-        });
-
-        // Dyslexia Font
-        document.getElementById('dyslexiaFont').addEventListener('change', function() {
-            if (this.checked) {
-                document.body.classList.add('dyslexia-font');
-                localStorage.setItem('accessibility-dyslexia-font', 'true');
-            } else {
-                document.body.classList.remove('dyslexia-font');
-                localStorage.setItem('accessibility-dyslexia-font', 'false');
-            }
-        });
-
-        // Enhanced Focus
-        document.getElementById('enhancedFocus').addEventListener('change', function() {
-            if (this.checked) {
-                document.body.classList.add('enhanced-focus');
-                localStorage.setItem('accessibility-enhanced-focus', 'true');
-            } else {
-                document.body.classList.remove('enhanced-focus');
-                localStorage.setItem('accessibility-enhanced-focus', 'false');
-            }
-        });
-
-        // Link Underlines
-        document.getElementById('linkUnderlines').addEventListener('change', function() {
-            if (this.checked) {
-                document.body.classList.add('link-underlines');
-                localStorage.setItem('accessibility-link-underlines', 'true');
-            } else {
-                document.body.classList.remove('link-underlines');
-                localStorage.setItem('accessibility-link-underlines', 'false');
-            }
-        });
-
-        // Reset All
-        document.getElementById('resetAll').addEventListener('click', function() {
-            if (confirm('Reset all accessibility settings to default?')) {
-                // Clear all accessibility settings
-                localStorage.removeItem('accessibility-font-size');
-                localStorage.removeItem('accessibility-high-contrast');
-                localStorage.removeItem('accessibility-reduce-motion');
-                localStorage.removeItem('accessibility-dyslexia-font');
-                localStorage.removeItem('accessibility-enhanced-focus');
-                localStorage.removeItem('accessibility-link-underlines');
+            // Font size controls
+            let fontSize = parseInt(localStorage.getItem('accessibility-font-size')) || 100;
+            
+            function initializeEventListeners() {
+                // Font size buttons
+                document.getElementById('increaseFont').addEventListener('click', function() {
+                    if (fontSize < 150) {
+                        fontSize += 10;
+                        applyFontSize();
+                    }
+                });
                 
-                fontSize = 100;
-                document.getElementById('highContrast').checked = false;
-                document.getElementById('reduceMotion').checked = false;
-                document.getElementById('dyslexiaFont').checked = false;
-                document.getElementById('enhancedFocus').checked = false;
-                document.getElementById('linkUnderlines').checked = false;
-                applySettings();
-            }
-        });
+                document.getElementById('decreaseFont').addEventListener('click', function() {
+                    if (fontSize > 70) {
+                        fontSize -= 10;
+                        applyFontSize();
+                    }
+                });
+                
+                document.getElementById('resetFont').addEventListener('click', function() {
+                    fontSize = 100;
+                    applyFontSize();
+                });
 
-        // Load settings from localStorage
-        function loadSettings() {
-            fontSize = parseInt(localStorage.getItem('accessibility-font-size')) || 100;
-            document.getElementById('currentSize').textContent = fontSize + '%';
-            
-            document.getElementById('highContrast').checked = localStorage.getItem('accessibility-high-contrast') === 'true';
-            document.getElementById('reduceMotion').checked = localStorage.getItem('accessibility-reduce-motion') === 'true';
-            document.getElementById('dyslexiaFont').checked = localStorage.getItem('accessibility-dyslexia-font') === 'true';
-            document.getElementById('enhancedFocus').checked = localStorage.getItem('accessibility-enhanced-focus') === 'true';
-            document.getElementById('linkUnderlines').checked = localStorage.getItem('accessibility-link-underlines') === 'true';
-        }
+                // Toggle switches
+                document.getElementById('highContrast').addEventListener('change', function(e) {
+                    toggleSetting('high-contrast', this.checked);
+                });
 
-        // Apply all settings
-        function applySettings() {
-            applyFontSize();
+                document.getElementById('reduceMotion').addEventListener('change', function(e) {
+                    toggleSetting('reduce-motion', this.checked);
+                });
+
+                document.getElementById('dyslexiaFont').addEventListener('change', function(e) {
+                    toggleSetting('dyslexia-font', this.checked);
+                });
+
+                document.getElementById('enhancedFocus').addEventListener('change', function(e) {
+                    toggleSetting('enhanced-focus', this.checked);
+                });
+
+                document.getElementById('linkUnderlines').addEventListener('change', function(e) {
+                    toggleSetting('link-underlines', this.checked);
+                });
+
+                // Reset all button
+                document.getElementById('resetAll').addEventListener('click', function() {
+                    if (confirm('Reset all accessibility settings to default?')) {
+                        // Clear all accessibility settings
+                        localStorage.removeItem('accessibility-font-size');
+                        localStorage.removeItem('accessibility-high-contrast');
+                        localStorage.removeItem('accessibility-reduce-motion');
+                        localStorage.removeItem('accessibility-dyslexia-font');
+                        localStorage.removeItem('accessibility-enhanced-focus');
+                        localStorage.removeItem('accessibility-link-underlines');
+                        
+                        // Reset all values
+                        fontSize = 100;
+                        document.getElementById('highContrast').checked = false;
+                        document.getElementById('reduceMotion').checked = false;
+                        document.getElementById('dyslexiaFont').checked = false;
+                        document.getElementById('enhancedFocus').checked = false;
+                        document.getElementById('linkUnderlines').checked = false;
+                        
+                        // Remove all classes
+                        document.body.classList.remove('high-contrast', 'reduce-motion', 'dyslexia-font', 'enhanced-focus', 'link-underlines');
+                        
+                        applyFontSize();
+                    }
+                });
+            }
             
-            if (localStorage.getItem('accessibility-high-contrast') === 'true') {
-                document.body.classList.add('high-contrast');
-            } else {
-                document.body.classList.remove('high-contrast');
+            function applyFontSize() {
+                document.documentElement.style.fontSize = fontSize + '%';
+                document.getElementById('currentSize').textContent = fontSize + '%';
+                localStorage.setItem('accessibility-font-size', fontSize);
             }
-            if (localStorage.getItem('accessibility-reduce-motion') === 'true') {
-                document.body.classList.add('reduce-motion');
-            } else {
-                document.body.classList.remove('reduce-motion');
+
+            function toggleSetting(className, isEnabled) {
+                const storageKey = 'accessibility-' + className;
+                
+                if (isEnabled) {
+                    document.body.classList.add(className);
+                    localStorage.setItem(storageKey, 'true');
+                    
+                    // If reduce-motion is enabled, stop SVG animations
+                    if (className === 'reduce-motion') {
+                        stopSVGAnimations();
+                    }
+                } else {
+                    document.body.classList.remove(className);
+                    localStorage.setItem(storageKey, 'false');
+                }
             }
-            if (localStorage.getItem('accessibility-dyslexia-font') === 'true') {
-                document.body.classList.add('dyslexia-font');
-            } else {
-                document.body.classList.remove('dyslexia-font');
+            
+            function stopSVGAnimations() {
+                // Find all SVG animate elements and stop them
+                const animateElements = document.querySelectorAll('svg animate, svg animateTransform, svg animateMotion');
+                animateElements.forEach(element => {
+                    element.beginElement = function() {}; // Prevent animation from starting
+                    try {
+                        element.endElement(); // Stop if already running
+                    } catch(e) {
+                        // Some browsers may not support endElement, that's okay
+                    }
+                });
             }
-            if (localStorage.getItem('accessibility-enhanced-focus') === 'true') {
-                document.body.classList.add('enhanced-focus');
-            } else {
-                document.body.classList.remove('enhanced-focus');
+
+            // Load settings from localStorage
+            function loadSettings() {
+                // Load font size
+                fontSize = parseInt(localStorage.getItem('accessibility-font-size')) || 100;
+                document.documentElement.style.fontSize = fontSize + '%';
+                document.getElementById('currentSize').textContent = fontSize + '%';
+                
+                // Load toggle states
+                const settings = [
+                    { id: 'highContrast', className: 'high-contrast' },
+                    { id: 'reduceMotion', className: 'reduce-motion' },
+                    { id: 'dyslexiaFont', className: 'dyslexia-font' },
+                    { id: 'enhancedFocus', className: 'enhanced-focus' },
+                    { id: 'linkUnderlines', className: 'link-underlines' }
+                ];
+                
+                settings.forEach(function(setting) {
+                    const storageKey = 'accessibility-' + setting.className;
+                    const isEnabled = localStorage.getItem(storageKey) === 'true';
+                    const checkbox = document.getElementById(setting.id);
+                    
+                    if (checkbox) {
+                        checkbox.checked = isEnabled;
+                        
+                        if (isEnabled) {
+                            document.body.classList.add(setting.className);
+                        } else {
+                            document.body.classList.remove(setting.className);
+                        }
+                    }
+                });
             }
-            if (localStorage.getItem('accessibility-link-underlines') === 'true') {
-                document.body.classList.add('link-underlines');
-            } else {
-                document.body.classList.remove('link-underlines');
-            }
-        }
+        })();
     </script>
 
     <!-- Accessibility Settings Loader -->

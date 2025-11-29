@@ -1442,7 +1442,8 @@ body.high-contrast div[style*="background: white"] h3 {
 
 /* Gradient backgrounds - black background with white text */
 body.high-contrast section[style*="gradient"],
-body.high-contrast div[style*="gradient"] {
+body.high-contrast div[style*="gradient"],
+body.high-contrast .inclusion-statement {
     background: #000000 !important;
     color: #ffffff !important;
 }
@@ -1455,7 +1456,11 @@ body.high-contrast div[style*="gradient"] strong,
 body.high-contrast div[style*="gradient"] div,
 body.high-contrast div[style*="linear-gradient"] *,
 body.high-contrast div[style*="linear-gradient"] p,
-body.high-contrast div[style*="linear-gradient"] h3 {
+body.high-contrast div[style*="linear-gradient"] h3,
+body.high-contrast .inclusion-statement *,
+body.high-contrast .inclusion-statement h2,
+body.high-contrast .inclusion-statement p,
+body.high-contrast .inclusion-statement strong {
     color: #ffffff !important;
 }
 
@@ -1482,13 +1487,50 @@ body.high-contrast div[style*="border-left"][style*="background"] * {
     color: #ffffff !important;
 }
 
-/* Reduce Motion Override */
+/* Reduce Motion Override - respects both user setting and system preference */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    svg animate,
+    svg animateTransform {
+        display: none !important;
+    }
+}
+
 body.reduce-motion *,
 body.reduce-motion *::before,
 body.reduce-motion *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    animation-play-state: paused !important;
+    animation: none !important;
+}
+
+/* Stop SVG animations when reduce motion is enabled */
+body.reduce-motion svg animate,
+body.reduce-motion svg animateTransform,
+body.reduce-motion svg animateMotion {
+    display: none !important;
+}
+
+body.reduce-motion svg circle[cx],
+body.reduce-motion svg rect[x],
+body.reduce-motion svg path,
+body.reduce-motion svg ellipse {
+    animation: none !important;
+}
+
+/* Ensure animated elements show their final state immediately */
+body.reduce-motion *[style*="animation:"] {
+    animation: none !important;
+    opacity: 1 !important;
     transform: none !important;
 }
 

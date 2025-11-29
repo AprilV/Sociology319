@@ -7,6 +7,18 @@
     'use strict';
     
     /**
+     * Stop all SVG animations when reduce motion is enabled
+     */
+    function stopSVGAnimations() {
+        // Find all SVG animate elements
+        const animateElements = document.querySelectorAll('svg animate, svg animateTransform, svg animateMotion');
+        animateElements.forEach(element => {
+            element.beginElement = function() {}; // Prevent animation from starting
+            element.endElement(); // Stop if already running
+        });
+    }
+    
+    /**
      * Apply all saved accessibility settings
      */
     function loadAccessibilitySettings() {
@@ -26,6 +38,7 @@
         const reduceMotion = localStorage.getItem('accessibility-reduce-motion');
         if (reduceMotion === 'true') {
             document.body.classList.add('reduce-motion');
+            stopSVGAnimations(); // Stop SVG animations
         }
         
         // Dyslexia Font
