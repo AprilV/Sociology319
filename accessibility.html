@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Settings - Digital Divide in AI Literacy | SOC319</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .settings-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .setting-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #1a7f8e;
+        }
+        
+        .setting-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .setting-title {
+            color: #1e3a5f;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .setting-description {
+            color: #666;
+            font-size: 0.95rem;
+            margin: 0.5rem 0 1rem 0;
+            line-height: 1.6;
+        }
+        
+        /* Toggle Switch */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 34px;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background-color: #1a7f8e;
+        }
+        
+        input:focus + .slider {
+            box-shadow: 0 0 1px #1a7f8e, 0 0 0 3px rgba(26, 127, 142, 0.3);
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        
+        /* Font size controls */
+        .font-size-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .font-btn {
+            background: #1a7f8e;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .font-btn:hover {
+            background: #1e3a5f;
+            transform: translateY(-2px);
+        }
+        
+        .font-btn:focus {
+            outline: 3px solid #ffeb3b;
+            outline-offset: 2px;
+        }
+        
+        .current-size {
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+        
+        /* Statement banner */
+        .inclusion-statement {
+            background: linear-gradient(135deg, #1e3a5f 0%, #1a7f8e 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .inclusion-statement h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .inclusion-statement p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header role="banner" style="background: linear-gradient(135deg, #1e3a5f 0%, #1a7f8e 100%); color: white; padding: 1.5rem 2rem; text-align: center;">
+        <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem; font-weight: 600; color: #ffffff; text-shadow: 0 1px 3px rgba(0,0,0,0.2);">April V. Sykes</h1>
+        <p style="font-size: 1.1rem; margin: 0.25rem 0;">SOC319 - Social Issues & Technology</p>
+        <p style="font-size: 1rem; margin: 0.25rem 0;">Dr. Cohen | Olympic College | Fall 2025</p>
+    </header>
+
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-brand">Digital Divide in AI Literacy</div>
+            <ul class='nav-menu'>
+                <li><a href='index.html'>Home</a></li>
+                <li><a href='problem.html'>Context</a></li>
+                <li><a href='methodology.html'>Methodology</a></li>
+                <li><a href='case-study.html'>Case Study</a></li>
+                <li><a href='strategies.html'>Strategies</a></li>
+                <li><a href='role.html'>Reflexivity</a></li>
+                <li><a href='references.html'>References</a></li>
+                <li><a href='game.html'>Game</a></li>
+                <li><a href='about.html'>About Me</a></li>
+                <li><a href='accessibility.html' class='active'>♿ Accessibility</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main-content" role="main" class="settings-container">
+        <h1 style="color: #1e3a5f; margin-bottom: 1rem; font-size: 2.5rem; text-align: center;">Accessibility Settings</h1>
+        
+        <div class="inclusion-statement">
+            <h2>♿ Bridging the Digital Divide Means Everyone</h2>
+            <p>
+                This research examines how 66% of Americans are excluded from AI literacy. People with disabilities face even greater barriers in accessing technology. These settings give you control over how you experience this site, because <strong>accessibility isn't optional—it's essential equity.</strong>
+            </p>
+        </div>
+
+        <!-- Font Size Control -->
+        <div class="setting-card">
+            <div class="setting-header">
+                <h3 class="setting-title">📝 Text Size</h3>
+            </div>
+            <p class="setting-description">
+                Adjust text size for better readability. Helpful for low vision, aging eyes, or screen distance preferences.
+            </p>
+            <div class="font-size-controls">
+                <button class="font-btn" id="decreaseFont" aria-label="Decrease text size">A-</button>
+                <span class="current-size" id="currentSize" aria-live="polite">100%</span>
+                <button class="font-btn" id="increaseFont" aria-label="Increase text size">A+</button>
+                <button class="font-btn" id="resetFont" aria-label="Reset text size to default">Reset</button>
+            </div>
+        </div>
+
+        <!-- High Contrast Mode -->
+        <div class="setting-card">
+            <div class="setting-header">
+                <h3 class="setting-title">🎨 High Contrast Mode</h3>
+                <label class="switch">
+                    <input type="checkbox" id="highContrast" aria-label="Toggle high contrast mode">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <p class="setting-description">
+                Increases contrast between text and background. Helps users with low vision, color blindness, or who work in bright environments.
+            </p>
+        </div>
+
+        <!-- Reduce Motion -->
+        <div class="setting-card">
+            <div class="setting-header">
+                <h3 class="setting-title">🌀 Reduce Motion</h3>
+                <label class="switch">
+                    <input type="checkbox" id="reduceMotion" aria-label="Toggle reduced motion">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <p class="setting-description">
+                Minimizes animations and transitions. Essential for users with vestibular disorders, motion sensitivity, or who find animations distracting.
+            </p>
+        </div>
+
+        <!-- Dyslexia-Friendly Font -->
+        <div class="setting-card">
+            <div class="setting-header">
+                <h3 class="setting-title">📖 Dyslexia-Friendly Font</h3>
+                <label class="switch">
+                    <input type="checkbox" id="dyslexiaFont" aria-label="Toggle dyslexia-friendly font">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <p class="setting-description">
+                Switches to OpenDyslexic font with weighted bottoms and unique letter shapes. Designed to reduce letter confusion and improve reading flow.
+            </p>
+        </div>
+
+        <!-- Enhanced Focus Indicators -->
+        <div class="setting-card">
+            <div class="setting-header">
+                <h3 class="setting-title">🎯 Enhanced Focus Indicators</h3>
+                <label class="switch">
+                    <input type="checkbox" id="enhancedFocus" aria-label="Toggle enhanced focus indicators">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <p class="setting-description">
+                Makes keyboard navigation outlines thicker and more visible. Critical for keyboard-only users and those who navigate without a mouse.
+            </p>
+        </div>
+
+        <!-- Link Underlines -->
+        <div class="setting-card">
+            <div class="setting-header">
+                <h3 class="setting-title">🔗 Always Show Link Underlines</h3>
+                <label class="switch">
+                    <input type="checkbox" id="linkUnderlines" aria-label="Toggle permanent link underlines">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <p class="setting-description">
+                Always underlines links instead of only on hover. Helps users with color blindness identify clickable text.
+            </p>
+        </div>
+
+        <!-- Reset All Settings -->
+        <div style="text-align: center; margin-top: 2rem;">
+            <button class="font-btn" id="resetAll" style="padding: 1rem 2rem; font-size: 1.1rem;">
+                Reset All Settings to Default
+            </button>
+        </div>
+
+        <!-- Why This Matters Section -->
+        <div style="background: #f8f9fa; padding: 2rem; border-radius: 12px; margin-top: 3rem; border-left: 4px solid #1a7f8e;">
+            <h2 style="color: #1e3a5f; margin-bottom: 1rem;">Why These Settings Matter</h2>
+            <p style="color: #333; line-height: 1.7; margin-bottom: 1rem;">
+                Just as this research explores the AI literacy divide, accessibility settings address the <strong>disability divide</strong> in technology. According to the CDC, 1 in 4 adults in the U.S. has a disability. Yet most websites aren't designed with their needs in mind.
+            </p>
+            <p style="color: #333; line-height: 1.7; margin: 0;">
+                Offering these controls isn't just about WCAG compliance. It's about <strong>human dignity</strong>, user autonomy, and acknowledging that technology should adapt to people, not the other way around. This is what bridging divides looks like in practice.
+            </p>
+        </div>
+    </main>
+
+    <footer role="contentinfo" style="background: linear-gradient(135deg, #1e3a5f 0%, #1a7f8e 100%); color: white; padding: 2rem; text-align: center; margin-top: 3rem;">
+        <p style="margin: 0; font-size: 1rem;">© 2025 April V. Sykes | Developer & Researcher</p>
+        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; opacity: 0.9;">SOC319 - Digital Divide in AI Literacy</p>
+    </footer>
+
+    <script>
+        // Load saved settings on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSettings();
+            applySettings();
+        });
+
+        // Font size controls
+        let fontSize = parseInt(localStorage.getItem('fontSize')) || 100;
+        
+        document.getElementById('increaseFont').addEventListener('click', function() {
+            if (fontSize < 150) {
+                fontSize += 10;
+                applyFontSize();
+            }
+        });
+        
+        document.getElementById('decreaseFont').addEventListener('click', function() {
+            if (fontSize > 70) {
+                fontSize -= 10;
+                applyFontSize();
+            }
+        });
+        
+        document.getElementById('resetFont').addEventListener('click', function() {
+            fontSize = 100;
+            applyFontSize();
+        });
+        
+        function applyFontSize() {
+            document.documentElement.style.fontSize = fontSize + '%';
+            document.getElementById('currentSize').textContent = fontSize + '%';
+            localStorage.setItem('fontSize', fontSize);
+        }
+
+        // High Contrast Mode
+        document.getElementById('highContrast').addEventListener('change', function() {
+            if (this.checked) {
+                document.body.classList.add('high-contrast');
+                localStorage.setItem('highContrast', 'true');
+            } else {
+                document.body.classList.remove('high-contrast');
+                localStorage.setItem('highContrast', 'false');
+            }
+        });
+
+        // Reduce Motion
+        document.getElementById('reduceMotion').addEventListener('change', function() {
+            if (this.checked) {
+                document.body.classList.add('reduce-motion');
+                localStorage.setItem('reduceMotion', 'true');
+            } else {
+                document.body.classList.remove('reduce-motion');
+                localStorage.setItem('reduceMotion', 'false');
+            }
+        });
+
+        // Dyslexia Font
+        document.getElementById('dyslexiaFont').addEventListener('change', function() {
+            if (this.checked) {
+                document.body.classList.add('dyslexia-font');
+                localStorage.setItem('dyslexiaFont', 'true');
+            } else {
+                document.body.classList.remove('dyslexia-font');
+                localStorage.setItem('dyslexiaFont', 'false');
+            }
+        });
+
+        // Enhanced Focus
+        document.getElementById('enhancedFocus').addEventListener('change', function() {
+            if (this.checked) {
+                document.body.classList.add('enhanced-focus');
+                localStorage.setItem('enhancedFocus', 'true');
+            } else {
+                document.body.classList.remove('enhanced-focus');
+                localStorage.setItem('enhancedFocus', 'false');
+            }
+        });
+
+        // Link Underlines
+        document.getElementById('linkUnderlines').addEventListener('change', function() {
+            if (this.checked) {
+                document.body.classList.add('link-underlines');
+                localStorage.setItem('linkUnderlines', 'true');
+            } else {
+                document.body.classList.remove('link-underlines');
+                localStorage.setItem('linkUnderlines', 'false');
+            }
+        });
+
+        // Reset All
+        document.getElementById('resetAll').addEventListener('click', function() {
+            if (confirm('Reset all accessibility settings to default?')) {
+                localStorage.clear();
+                fontSize = 100;
+                document.getElementById('highContrast').checked = false;
+                document.getElementById('reduceMotion').checked = false;
+                document.getElementById('dyslexiaFont').checked = false;
+                document.getElementById('enhancedFocus').checked = false;
+                document.getElementById('linkUnderlines').checked = false;
+                applySettings();
+            }
+        });
+
+        // Load settings from localStorage
+        function loadSettings() {
+            fontSize = parseInt(localStorage.getItem('fontSize')) || 100;
+            document.getElementById('currentSize').textContent = fontSize + '%';
+            
+            document.getElementById('highContrast').checked = localStorage.getItem('highContrast') === 'true';
+            document.getElementById('reduceMotion').checked = localStorage.getItem('reduceMotion') === 'true';
+            document.getElementById('dyslexiaFont').checked = localStorage.getItem('dyslexiaFont') === 'true';
+            document.getElementById('enhancedFocus').checked = localStorage.getItem('enhancedFocus') === 'true';
+            document.getElementById('linkUnderlines').checked = localStorage.getItem('linkUnderlines') === 'true';
+        }
+
+        // Apply all settings
+        function applySettings() {
+            applyFontSize();
+            
+            if (localStorage.getItem('highContrast') === 'true') {
+                document.body.classList.add('high-contrast');
+            }
+            if (localStorage.getItem('reduceMotion') === 'true') {
+                document.body.classList.add('reduce-motion');
+            }
+            if (localStorage.getItem('dyslexiaFont') === 'true') {
+                document.body.classList.add('dyslexia-font');
+            }
+            if (localStorage.getItem('enhancedFocus') === 'true') {
+                document.body.classList.add('enhanced-focus');
+            }
+            if (localStorage.getItem('linkUnderlines') === 'true') {
+                document.body.classList.add('link-underlines');
+            }
+        }
+    </script>
+
+    <!-- Accessibility Settings Loader -->
+    <script src="js/accessibility-loader.js"></script>
+</body>
+</html>

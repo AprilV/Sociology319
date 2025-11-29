@@ -1314,3 +1314,81 @@ button:focus-visible,
         transform: none !important;
     }
 }
+
+/* ============================================
+   USER ACCESSIBILITY PREFERENCE CLASSES
+   ============================================ */
+
+/* High Contrast Mode */
+body.high-contrast {
+    --text-dark: #000000;
+    --text-light: #000000;
+    --bg-white: #ffffff;
+    background: #ffffff !important;
+}
+
+body.high-contrast * {
+    border-color: #000000 !important;
+}
+
+body.high-contrast a {
+    color: #0000EE !important;
+    text-decoration: underline !important;
+}
+
+body.high-contrast .navbar,
+body.high-contrast header,
+body.high-contrast footer,
+body.high-contrast .hero-banner {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+
+body.high-contrast .nav-menu li a {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+body.high-contrast section,
+body.high-contrast .setting-card {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+}
+
+/* Reduce Motion Override */
+body.reduce-motion *,
+body.reduce-motion *::before,
+body.reduce-motion *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transform: none !important;
+}
+
+/* Dyslexia-Friendly Font */
+@import url('https://fonts.cdnfonts.com/css/opendyslexic');
+
+body.dyslexia-font,
+body.dyslexia-font * {
+    font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif !important;
+}
+
+/* Enhanced Focus Indicators */
+body.enhanced-focus *:focus,
+body.enhanced-focus *:focus-visible {
+    outline: 5px solid #ffeb3b !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 8px rgba(255, 235, 59, 0.5) !important;
+}
+
+/* Always Show Link Underlines */
+body.link-underlines a {
+    text-decoration: underline !important;
+}
+
+body.link-underlines a:hover {
+    text-decoration: underline !important;
+    font-weight: bold;
+}
